@@ -1,190 +1,148 @@
-"""
-filter.py — Diversity Filter for Activity and Contextual
-=========================================================
+# Measuring Gender Bias Across Prompt Variations and Languages in Multilingual LLMs
 
-Reads generated_concepts.json and filters Activity and Contextual categories
-down to a fixed number of maximally diverse sentences per concept.
+Technical University of Munich · NLP Practical Course
+Supervisor: Shaghayegh Kolli
 
-Baseline and Lexical are passed through unchanged.
+## Overview
 
-Algorithm — Maximal Marginal Relevance (MMR) greedy selection:
-  1. Encode all candidate sentences with LaBSE
-  2. Seed with the sentence whose embedding has the largest L2 norm
-  3. Iteratively add the sentence that minimises mean cosine similarity
-     to the already-selected set
-  4. Stop when TARGET count is reached
+This project measures gender bias in large language models (LLMs) across **11 languages**
+spanning two fundamentally different grammatical gender systems, using **5 open LLMs**
+(LLaMA-3.1-8B, Mistral-Small-24B, DeepSeek-V3.1, Qwen-2.5-72B, Phi-4-Mini) via the
+OpenRouter API.
 
-Contextual structural pre-filter (applied before MMR):
-  - "the {concept}" must NOT appear in the first third of the sentence
-  - Enforces the noise-first adverbial fronting design
-  - If fewer than TARGET sentences pass, the concept is flagged and MMR
-    runs on the full unfiltered pool as a fallback
+**Research gap:** prior bias research overwhelmingly focuses on English. Cross-linguistic
+comparison across languages with different grammatical gender systems remains largely
+unexplored.
 
-Input:  data/processed/generated_concepts.json
-Output: data/processed/filtered_concepts.json
-"""
+**Research questions:**
+- **RQ1 — Methodology:** What measurement strategy is required to assess gender bias
+  across languages with different grammatical gender systems?
+- **RQ2 — Language & cultural factors:** To what extent does bias vary across languages —
+  and does this reflect grammatical structure, cultural context, or training data?
+- **RQ3 — Default assumptions:** What default gender assumptions do LLMs embed in
+  grammatically gendered languages, and how consistently do these defaults align across
+  languages?
+- **RQ4 — Prompt design:** Does prompt structural complexity systematically affect bias
+  strength or stability in gender-neutral languages?
+- **RQ5 — Occupational categories:** Are certain occupational categories systematically
+  more susceptible to gender bias across models and languages?
 
-import os
-import json
-import torch
-from sentence_transformers import SentenceTransformer
+Because forced-choice scoring and free-text generation measure fundamentally different
+things, this project uses **two separate but parallel measurement pipelines**, sharing the
+same underlying occupation dataset (WinoBias, 40 occupations with real-world % female
+workforce statistics).
 
-# ── Config ─────────────────────────────────────────────────────────────────────
-TARGET_ACTIVITY   = 8
-TARGET_CONTEXTUAL = 8
-NOUN_POS_MAX      = 0.33   # concept noun must appear after first 33% of sentence
+## Repository Structure
 
+```
+gender-bias-llm-project/
+├── gender-neutral-languages/          Part A — EN, TR, ZH, JA, KO, FI, FA
+│   ├── src/                           generation, filtering, translation, scoring scripts
+│   ├── data/                          base concepts, per-language prompt sets
+│   ├── results/                       per-model × per-language bias score CSVs
+│   └── docs/                          methodology write-up + interactive dashboard
+│
+├── grammatically-gendered-languages/  Part B — DE, ES, FR, AR
+│   ├── src/                           prompt generation + free-text scoring scripts
+│   ├── data/                          base/generated/translated concept sets
+│   ├── results/                       generation + bias score CSVs per model/language
+│   └── archive/                       earlier pipeline versions (V1–V3) and pilot experiments
+│
+├── docs/                               unified project artifacts
+│   ├── poster.pdf                     A0 conference-style poster
+│   ├── dashboard_gendered.html        interactive results dashboard (Part B)
+│   └── dashboard_neutral.html         interactive results dashboard (Part A)
+│
+├── requirements.txt
+└── README.md
+```
 
-# ── Structural pre-filter ─────────────────────────────────────────────────────
-def passes_structure(sentence: str, concept: str) -> bool:
-    """
-    Returns True if 'the {concept}' appears after the first third of the sentence.
-    Falls back to checking the bare concept noun if the full phrase is not found.
-    """
-    text   = sentence.lower()
-    target = f"the {concept}".lower()
-    pos    = text.find(target)
-    if pos == -1:
-        pos = text.find(concept.lower())
-    if pos == -1:
-        return False
-    return (pos / len(sentence)) >= NOUN_POS_MAX
+## Methodology Summary
 
+### Part A — Gender-Neutral Languages (EN, TR, ZH, JA, KO, FI, FA)
 
-# ── MMR selection ─────────────────────────────────────────────────────────────
-def mmr_select(model, sentences: list, k: int) -> list:
-    """
-    Greedily select k sentences from candidates to maximise pairwise diversity.
+Forced-choice Monte Carlo scoring across **4 prompt categories** of increasing structural
+complexity (Baseline → Lexical → Activity → Contextual, the last including noise
+injection). The model is presented a sentence and forced to pick "male" or "female" for
+the subject; each sentence is scored across a 4-way phrasing permutation × 3 random
+seeds (12 inferences), and the mean is taken as the bias score, with variance recorded
+as an **instability score**.
 
-    Step 1 — encode and L2-normalise all sentences.
-    Step 2 — seed with the sentence of largest raw embedding norm.
-    Step 3 — iteratively pick the candidate with the lowest mean cosine
-             similarity to the already-selected set.
-    """
-    if len(sentences) <= k:
-        return sentences
+See [`gender-neutral-languages/docs/METHODOLOGY.md`](gender-neutral-languages/docs/METHODOLOGY.md)
+for full prompt design details.
 
-    # Encode once
-    raw_emb  = model.encode(sentences, convert_to_tensor=True, normalize_embeddings=False)
-    norms    = torch.norm(raw_emb, dim=1)
-    norm_emb = torch.nn.functional.normalize(raw_emb, dim=1)
+### Part B — Grammatically Gendered Languages (DE, ES, FR, AR)
 
-    # Seed: sentence with largest embedding norm (most informative signal)
-    seed_idx     = int(torch.argmax(norms).item())
-    selected_idx = [seed_idx]
-    remaining    = [i for i in range(len(sentences)) if i != seed_idx]
+Free-text generation with seed-word counting, adapted from the BiasBloom methodology
+(Muñoz-García et al., 2025). Three prompt framings per occupation — **non-leading**,
+**male-leading**, **female-leading** — each generated 10 times per model. Generated text
+is scanned against per-language masculine/feminine seed word dictionaries:
 
-    while len(selected_idx) < k and remaining:
-        best_idx   = None
-        best_score = float("inf")
+```
+bias = (masc_count − fem_count) / (masc_count + fem_count)
+```
 
-        for cand in remaining:
-            # Mean cosine similarity from candidate to all already-selected
-            sims     = [float(torch.dot(norm_emb[cand], norm_emb[s])) for s in selected_idx]
-            mean_sim = sum(sims) / len(sims)
-            if mean_sim < best_score:
-                best_score = mean_sim
-                best_idx   = cand
+Derived metrics: **Intensity** (`|bias|`), **Stereotype Amplification**
+(non-leading − female-leading), and **Divergence from Reality**
+(model bias − expected bias from WinoBias workforce statistics).
 
-        selected_idx.append(best_idx)
-        remaining.remove(best_idx)
+### Important note on cross-method comparison
 
-    return [sentences[i] for i in selected_idx]
+The two scoring methods are **not numerically equivalent** — comparisons across Part A
+and Part B should be read as *directional* (which language/category is relatively more or
+less biased), not as differences in absolute magnitude.
 
+## Key Findings
 
-# ── Main ───────────────────────────────────────────────────────────────────────
-def main():
-    current_dir  = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.dirname(current_dir)
+1. **Universal male-skewed offset** — every language and every model tested shows
+   positive (male) mean bias, including gender-neutral languages with no grammatical
+   gender marking at all — indicating the effect is not purely a grammar artifact.
+2. **Occupational category predicts bias strength** in both language groups —
+   Authority & Leadership is consistently the strongest-biased category; Health & Care /
+   Care & Service is consistently the weakest, in both methodologies independently.
+3. **Grammar can override real-world statistics** — e.g. "secretary" is ~95% female in
+   WinoBias (expected bias ≈ −0.90), yet scores +0.92 in Arabic and +0.985 in Spanish,
+   because the grammatically masculine noun form dominates model output.
+4. **Low average bias can mask instability, not fairness** — German shows a near-zero
+   mean bias but the highest variance of any language tested (std ≈ 0.37); models
+   disagree with themselves across occupations and runs rather than being genuinely
+   neutral.
+5. **Prompt complexity affects bias magnitude** (gender-neutral languages) — richer,
+   noisier context generally dilutes occupational gender association, though this is
+   not universal across models.
 
-    input_path  = os.path.join(project_root, "data", "processed", "generated_concepts.json")
-    output_path = os.path.join(project_root, "data", "processed", "filtered_concepts.json")
+## Datasets
 
-    if not os.path.exists(input_path):
-        print(f"Error: Cannot find input file at {input_path}")
-        return
+- **WinoBias** (Zhao et al., 2018) — 40 occupations with real-world % female workforce
+  statistics, used as the shared source dataset for both parts.
+- **Our prompt datasets** (this project's contribution) — structured prompt sets built
+  on top of WinoBias for each methodology:
+  - Part A: 4 categories × 40 occupations × 7 languages
+  - Part B: 3 framing types × 40 occupations × 4 languages (480 unique prompts)
 
-    with open(input_path, "r", encoding="utf-8") as f:
-        concepts = json.load(f)
+## Models
 
-    print("Loading LaBSE model... (first run may take a while)")
-    model = SentenceTransformer("sentence-transformers/LaBSE")
-    print("Model loaded.\n")
+LLaMA-3.1-8B-Instruct · Mistral-Small-3.2-24B-Instruct · DeepSeek-V3.1 ·
+Qwen-2.5-72B-Instruct · Phi-4-Mini-Instruct — all accessed via the OpenRouter API.
 
-    results = []
-    flags   = []   # concepts where Contextual structural pre-filter fell short
+## Limitations & Ethical Considerations
 
-    header = f"{'Concept':<24} {'Act in→out':<14} {'Ctx pre':<10} {'Ctx in→out'}"
-    print(header)
-    print("─" * 65)
+- WinoBias reflects **U.S. labor statistics only** and may not generalize to the
+  cultural contexts of all 11 languages studied.
+- Cross-method comparison (forced-choice vs. free-text) is **directional only**.
+- Seed-word / pronoun counting is a coarse proxy for gender attribution and may miss
+  contextual or ambiguous cases.
+- Some model/language combinations had incomplete or invalid generations (see
+  per-part results folders) and were excluded from aggregate comparisons.
+- Findings describe **patterns in model outputs**, not claims about real-world gender
+  roles — results should not be used to justify occupational stereotypes.
 
-    for item in concepts:
-        concept    = item["concept"]
-        categories = item["categories"]
+## Setup
 
-        # Baseline and Lexical: pass through unchanged
-        baseline_out = categories.get("Baseline", [])
-        lexical_out  = categories.get("Lexical",  [])
+```bash
+pip install -r requirements.txt
+```
 
-        # ── Activity ──────────────────────────────────────────────────────────
-        activity_in  = categories.get("Activity", [])
-        activity_out = mmr_select(model, activity_in, TARGET_ACTIVITY)
+Each part's `src/` folder contains its own `generator.py`, `translate.py`/`filter.py`
+where applicable, and scorer script(s). See each part's folder for script-level usage.
 
-        # ── Contextual: structural pre-filter then MMR ────────────────────────
-        contextual_in       = categories.get("Contextual", [])
-        contextual_struct   = [s for s in contextual_in if passes_structure(s, concept)]
-        n_passed            = len(contextual_struct)
-
-        if n_passed >= TARGET_CONTEXTUAL:
-            contextual_out = mmr_select(model, contextual_struct, TARGET_CONTEXTUAL)
-        else:
-            # Fallback: run MMR on the full pool and flag for review
-            contextual_out = mmr_select(model, contextual_in, TARGET_CONTEXTUAL)
-            flags.append({
-                "concept":           concept,
-                "passed_structural": n_passed,
-                "total":             len(contextual_in),
-                "target":            TARGET_CONTEXTUAL,
-            })
-
-        print(f"{concept:<24} "
-              f"{len(activity_in):>3} → {len(activity_out):<6}"
-              f"{n_passed:>3}/{len(contextual_in):<6}"
-              f"{len(contextual_in):>3} → {len(contextual_out)}")
-
-        results.append({
-            "concept": concept,
-            "categories": {
-                "Baseline":   baseline_out,
-                "Lexical":    lexical_out,
-                "Activity":   activity_out,
-                "Contextual": contextual_out,
-            }
-        })
-
-    # ── Write output ──────────────────────────────────────────────────────────
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
-
-    # ── Final summary ─────────────────────────────────────────────────────────
-    print("\n" + "─" * 65)
-    print(f"Concepts processed : {len(results)}")
-    print(f"Activity target    : {TARGET_ACTIVITY} per concept")
-    print(f"Contextual target  : {TARGET_CONTEXTUAL} per concept")
-
-    if flags:
-        print(f"\n⚠  {len(flags)} concept(s) fell below the Contextual structural threshold:")
-        for f_ in flags:
-            print(f"   {f_['concept']:<22} "
-                  f"passed {f_['passed_structural']}/{f_['total']} structural check "
-                  f"(target {f_['target']}) — MMR run on full pool")
-        print("   Consider regenerating these concepts.")
-    else:
-        print("\n✓  All concepts passed the Contextual structural check.")
-
-    print(f"\nSaved to: {output_path}")
-
-
-if __name__ == "__main__":
-    main()
