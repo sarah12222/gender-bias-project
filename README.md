@@ -68,9 +68,6 @@ the subject; each sentence is scored across a 4-way phrasing permutation × 3 ra
 seeds (12 inferences), and the mean is taken as the bias score, with variance recorded
 as an **instability score**.
 
-See [`gender-neutral-languages/docs/METHODOLOGY.md`](gender-neutral-languages/docs/METHODOLOGY.md)
-for full prompt design details.
-
 ### Part B — Grammatically Gendered Languages (DE, ES, FR, AR)
 
 Free-text generation with seed-word counting, adapted from the BiasBloom methodology
