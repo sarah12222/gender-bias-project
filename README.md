@@ -147,6 +147,3 @@ pip install -r requirements.txt
 Each part's `src/` folder contains its own `generator.py`, `translate.py`/`filter.py`
 where applicable, and scorer script(s). See each part's folder for script-level usage.
 
-## Contact
-
-Sarah Derouiche · go98teh@mytum.de
