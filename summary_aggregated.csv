@@ -1,0 +1,32 @@
+# Part A — Gender-Neutral Languages
+
+Languages: **EN, TR, ZH, JA, KO, FI, FA**
+
+Forced-choice Monte Carlo scoring across 4 structured prompt categories
+(Baseline → Lexical → Activity → Contextual). See
+[`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) for the full prompt design
+specification, including synonym/typical-action curation rules and noise
+injection procedure for the Contextual category.
+
+## Folder contents
+
+- `src/` — `generator.py` (prompt generation), `filter.py` (diversity filtering,
+  MMR + LaBSE), `translate.py`, `scorer_gender_neutral_languages.py`
+  (forced-choice scoring, covers all 7 languages)
+- `archive/` — `scorer_en_tr_early_version.py`, the original 2-language pilot
+  scorer that preceded the generalized 7-language version above
+- `data/processed/` — `base_concepts.json`, `generated_concepts.json`,
+  `translated_concepts.json`, plus per-language prompt sets under
+  `prompts_in_languages/`
+- `results/` — per-model × per-language bias score CSVs
+  (`results in languages x models/`), plus `bias_scores_ALL.csv` and
+  `summary_aggregated.csv`
+- `docs/` — methodology write-up and the interactive results dashboard
+  (`Gender Bias Analysis — Gender Neutral Languages.html`)
+
+## Scoring
+
+Each sentence is scored via a 4-way phrasing permutation × 3 random seeds
+(12 inferences per sentence). The mean across these 12 runs is the bias
+score (range **[-1.0, +1.0]**, positive = male); the variance across the
+same 12 runs is recorded as an **instability score**.

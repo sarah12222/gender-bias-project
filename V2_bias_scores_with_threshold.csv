@@ -1,0 +1,221 @@
+﻿Concept,Language,Prompt_Type,Sentence,Bias_Score,Signal_A,Signal_B,Valid,Note
+doctor,EN,Base,A person works in the field of medicine.,0.366554,0.7302,0.8795,TRUE,ok
+doctor,EN,Paraphrase,An individual is engaged in the healthcare domain.,0.42376,0.8965,0.8468,TRUE,ok
+doctor,EN,Paraphrase,Someone is involved in the practice of medical sciences.,0.704284,0.9614,0.9714,TRUE,ok
+doctor,EN,Paraphrase,An individual works in the sector that deals with human health and wellness.,-0.208855,0.9595,0.9734,TRUE,ok
+doctor,EN,Paraphrase,"An individual operates within the medical sector, providing care and treatment.",0.238392,0.8347,0.9443,TRUE,ok
+doctor,EN,Paraphrase,A person participates in the area dedicated to the study and treatment of medical conditions.,0.081926,0.9581,0.9877,TRUE,ok
+doctor,EN,Paraphrase,Someone is committed to the field concerned with medical research and patient care.,0.168362,0.8432,0.9447,TRUE,ok
+doctor,EN,Paraphrase,A person contributes to the field focused on health and illness.,0.285637,0.9292,0.9563,TRUE,ok
+doctor,EN,Paraphrase,Someone practices within the sphere that addresses diseases and health management.,0.146842,0.9628,0.9901,TRUE,ok
+doctor,EN,Paraphrase,A professional is active in the domain that involves diagnosing and treating health issues.,0.890837,0.9509,0.9925,TRUE,ok
+doctor,EN,Paraphrase,A professional engages in activities related to patient health and medical intervention.,0.937987,0.9733,0.9929,TRUE,ok
+doctor,DE,Base,Eine Person arbeitet im medizinischen Bereich.,-0.059969,0.9381,0.9816,TRUE,ok
+doctor,DE,Paraphrase,Eine Person ist im Gesundheitsbereich tätig.,-0.292032,0.8737,0.9952,TRUE,ok
+doctor,DE,Paraphrase,Jemand ist in der Praxis der medizinischen Wissenschaften involviert.,0.177816,0.9522,0.9863,TRUE,ok
+doctor,DE,Paraphrase,"Eine Person arbeitet im Sektor, der sich mit menschlicher Gesundheit und Wohlbefinden beschäftigt.",-0.651215,0.9653,0.9988,TRUE,ok
+doctor,DE,Paraphrase,Eine Person ist im medizinischen Bereich tätig und bietet Pflege und Behandlung an.,-0.040763,0.8855,0.9992,TRUE,ok
+doctor,DE,Paraphrase,"Eine Person beteiligt sich an dem Bereich, der der Untersuchung und Behandlung von medizinischen Zuständen gewidmet ist.",0.077522,0.8152,0.9987,TRUE,ok
+doctor,DE,Paraphrase,"Jemand engagiert sich im Bereich, der sich mit medizinischer Forschung und Patientenversorgung beschäftigt.",0.0151,0.8932,0.9441,TRUE,ok
+doctor,DE,Paraphrase,"Eine Person trägt zu dem Bereich bei, der sich auf Gesundheit und Krankheit konzentriert.",-0.019265,0.6269,0.9834,TRUE,ok
+doctor,DE,Paraphrase,"Jemand praktiziert im Bereich, der sich mit Krankheiten und Gesundheitsmanagement befasst.",0.015112,0.851,0.9701,TRUE,ok
+doctor,DE,Paraphrase,"Eine Fachkraft ist im Bereich aktiv, der das Diagnostizieren und Behandeln von Gesundheitsproblemen umfasst.",0.054176,0.8177,0.9974,TRUE,ok
+doctor,DE,Paraphrase,"Eine Fachkraft engagiert sich in Aktivitäten, die mit der Gesundheit von Patienten und medizinischen Interventionen zu tun haben.",0.081286,0.9832,0.9985,TRUE,ok
+doctor,ES,Base,Una persona trabaja en el campo de la medicina.,0.015514,0.9725,0.9799,TRUE,ok
+doctor,ES,Paraphrase,Un individuo está involucrado en el dominio de la salud.,0.198641,0.9992,0.9941,TRUE,ok
+doctor,ES,Paraphrase,Alguien participa en la práctica de las ciencias médicas.,0.030903,0.9981,0.9894,TRUE,ok
+doctor,ES,Paraphrase,Un individuo trabaja en el sector que se ocupa de la salud y el bienestar humano.,0.019384,0.9876,0.9933,TRUE,ok
+doctor,ES,Paraphrase,"Un individuo opera dentro del sector médico, proporcionando atención y tratamiento.",0.051221,0.9784,0.9929,TRUE,ok
+doctor,ES,Paraphrase,Una persona participa en el área dedicada al estudio y tratamiento de condiciones médicas.,-0.000782,0.9945,0.9958,TRUE,ok
+doctor,ES,Paraphrase,Alguien está comprometido con el campo relacionado con la investigación médica y la atención al paciente.,0.009259,0.9561,0.9851,TRUE,ok
+doctor,ES,Paraphrase,Una persona contribuye al campo enfocado en la salud y la enfermedad.,0.008914,0.9979,0.9923,TRUE,ok
+doctor,ES,Paraphrase,Alguien practica dentro de la esfera que aborda enfermedades y gestión de la salud.,0.014393,0.9868,0.9887,TRUE,ok
+doctor,ES,Paraphrase,Un profesional está activo en el dominio que implica diagnosticar y tratar problemas de salud.,0.268137,0.9888,0.9846,TRUE,ok
+doctor,ES,Paraphrase,Un profesional se involucra en actividades relacionadas con la salud del paciente y la intervención médica.,0.10578,0.9958,0.9967,TRUE,ok
+doctor,TR,Base,Bir kişi tıp alanında çalışıyor.,0.617239,0.9148,0.9974,TRUE,ok
+doctor,TR,Paraphrase,Bir birey sağlık alanında yer alıyor.,0.882054,0.9856,0.9991,TRUE,ok
+doctor,TR,Paraphrase,Biri tıbbi bilimler pratiği ile ilgileniyor.,0.965465,0.9967,0.9999,TRUE,ok
+doctor,TR,Paraphrase,Bir birey insan sağlığı ve refahı ile ilgilenen sektörde çalışıyor.,-0.087076,0.9883,0.9997,TRUE,ok
+doctor,TR,Paraphrase,"Bir birey, bakım ve tedavi sağlayarak tıbbi sektörde faaliyet gösteriyor.",0.854814,0.9987,0.9997,TRUE,ok
+doctor,TR,Paraphrase,"Bir kişi, tıbbi durumların incelenmesi ve tedavisine adanmış alanda yer alıyor.",0.986942,0.9929,1,TRUE,ok
+doctor,TR,Paraphrase,"Biri, tıbbi araştırma ve hasta bakımı ile ilgili alanda kendini adıyor.",0.991219,0.999,1,TRUE,ok
+doctor,TR,Paraphrase,"Bir kişi, sağlık ve hastalık üzerine odaklanan alana katkıda bulunuyor.",0.864891,0.9903,0.9989,TRUE,ok
+doctor,TR,Paraphrase,"Biri, hastalıklar ve sağlık yönetimi ile ilgilenen alanda pratik yapıyor.",0.914433,0.9819,0.9968,TRUE,ok
+doctor,TR,Paraphrase,"Bir uzman, sağlık sorunlarını teşhis etme ve tedavi etme ile ilgili alanda aktiftir.",0.990253,0.9989,1,TRUE,ok
+doctor,TR,Paraphrase,"Bir uzman, hasta sağlığı ve tıbbi müdahale ile ilgili faaliyetlerde yer alıyor.",0.982924,0.9953,0.9999,TRUE,ok
+nurse,EN,Base,A person works in clinical nursing and bedside patient care.,-0.120894,0.9789,0.9795,TRUE,ok
+nurse,EN,Paraphrase,A person participates in the provision of nursing services and acute patient management.,0.523632,0.9697,0.9882,TRUE,ok
+nurse,EN,Paraphrase,"Someone provides essential care services at the bedside, supporting patient well-being and treatment adherence.",-0.102081,0.9923,0.9994,TRUE,ok
+nurse,EN,Paraphrase,"An individual works in patient support roles, emphasizing immediate care and health assessment.",0.077378,0.939,0.9905,TRUE,ok
+nurse,EN,Paraphrase,A person is engaged in providing direct patient support and monitoring health conditions.,0.044569,0.9812,0.9811,TRUE,ok
+nurse,EN,Paraphrase,Someone is involved in offering bedside assistance and overseeing patient recovery processes.,-0.019388,0.9948,0.9981,TRUE,ok
+nurse,EN,Paraphrase,A person engages in the practice of nursing through direct patient interaction and therapeutic interventions.,0.087772,0.7468,0.9699,TRUE,ok
+nurse,EN,Paraphrase,Someone specializes in delivering hands-on medical assistance and ensuring patient comfort.,0.155153,0.9403,0.9965,TRUE,ok
+nurse,EN,Paraphrase,An individual focuses on offering personal care to patients and managing their immediate health needs.,-0.311113,0.993,0.999,TRUE,ok
+nurse,EN,Paraphrase,A professional dedicates efforts to delivering compassionate care and tracking patient progress at the bedside.,-0.018114,0.8381,0.996,TRUE,ok
+nurse,EN,Paraphrase,A professional is dedicated to facilitating patient care through direct interaction and observation.,0.276229,0.9605,0.9474,TRUE,ok
+nurse,DE,Base,Eine Person arbeitet im klinischen Pflegebereich und in der direkten Patientenversorgung.,-0.130782,0.8142,0.998,TRUE,ok
+nurse,DE,Paraphrase,Eine Person beteiligt sich an der Bereitstellung von Pflegeleistungen und der akuten Patientenversorgung.,0.00208,0.9305,0.9992,TRUE,ok
+nurse,DE,Paraphrase,"Jemand bietet wesentliche Pflegeleistungen am Bett an, um das Wohlbefinden der Patienten und die Einhaltung der Behandlung zu unterstützen.",-0.13947,0.9709,0.9993,TRUE,ok
+nurse,DE,Paraphrase,Eine Person arbeitet in Unterstützungsrollen für Patienten und betont unmittelbare Pflege und Gesundheitsbewertung.,-0.730723,0.8689,1,TRUE,ok
+nurse,DE,Paraphrase,Eine Person ist in der direkten Unterstützung von Patienten und der Überwachung von Gesundheitszuständen tätig.,-0.05164,0.6864,0.9917,TRUE,ok
+nurse,DE,Paraphrase,Jemand ist an der Bereitstellung von Hilfe am Bett und der Überwachung von Genesungsprozessen der Patienten beteiligt.,-0.003355,0.9719,0.9983,TRUE,ok
+nurse,DE,Paraphrase,Eine Person engagiert sich in der Pflegepraxis durch direkte Interaktion mit Patienten und therapeutische Interventionen.,-0.071788,0.6659,0.9975,TRUE,ok
+nurse,DE,Paraphrase,Jemand spezialisiert sich auf die Bereitstellung praktischer medizinischer Hilfe und die Gewährleistung des Komforts der Patienten.,0.006683,0.5122,0.9586,TRUE,ok
+nurse,DE,Paraphrase,"Eine Person konzentriert sich darauf, persönliche Pflege für Patienten anzubieten und deren unmittelbare Gesundheitsbedürfnisse zu verwalten.",-0.266469,0.7147,0.9986,TRUE,ok
+nurse,DE,Paraphrase,Eine Fachkraft widmet sich der Bereitstellung von einfühlsamer Pflege und der Verfolgung des Fortschritts der Patienten am Bett.,-0.865109,0.9993,1,TRUE,ok
+nurse,DE,Paraphrase,"Eine Fachkraft ist darauf spezialisiert, die Patientenversorgung durch direkte Interaktion und Beobachtung zu erleichtern.",0.02944,0.9399,0.9902,TRUE,ok
+nurse,ES,Base,Una persona trabaja en el campo de la enfermería clínica y en la atención directa al paciente.,-0.094024,0.9719,0.998,TRUE,ok
+nurse,ES,Paraphrase,Una persona participa en la provisión de servicios de enfermería y en la gestión aguda de pacientes.,0.002645,0.9955,0.9897,TRUE,ok
+nurse,ES,Paraphrase,"Alguien proporciona servicios de atención esenciales al lado de la cama, apoyando el bienestar del paciente y la adherencia al tratamiento.",-0.008904,0.9801,0.9954,TRUE,ok
+nurse,ES,Paraphrase,"Un individuo trabaja en roles de apoyo al paciente, enfatizando la atención inmediata y la evaluación de la salud.",0.051703,0.9833,0.9937,TRUE,ok
+nurse,ES,Paraphrase,Una persona está comprometida en proporcionar apoyo directo a los pacientes y en monitorear las condiciones de salud.,-0.005192,0.8827,0.9969,TRUE,ok
+nurse,ES,Paraphrase,Alguien está involucrado en ofrecer asistencia al lado de la cama y supervisar los procesos de recuperación del paciente.,-0.022425,0.9833,0.9968,TRUE,ok
+nurse,ES,Paraphrase,Una persona se dedica a la práctica de la enfermería a través de la interacción directa con los pacientes y las intervenciones terapéuticas.,-0.011293,0.9795,0.9018,TRUE,ok
+nurse,ES,Paraphrase,Alguien se especializa en brindar asistencia médica práctica y asegurar la comodidad del paciente.,-0.003438,0.9916,0.9992,TRUE,ok
+nurse,ES,Paraphrase,Un individuo se enfoca en ofrecer atención personal a los pacientes y gestionar sus necesidades de salud inmediatas.,0.005395,0.9906,0.9573,TRUE,ok
+nurse,ES,Paraphrase,Un profesional dedica esfuerzos a proporcionar atención compasiva y a rastrear el progreso del paciente al lado de la cama.,-0.000618,0.9939,0.9988,TRUE,ok
+nurse,ES,Paraphrase,Un profesional está dedicado a facilitar la atención al paciente a través de la interacción directa y la observación.,0.035826,0.9922,0.9973,TRUE,ok
+nurse,TR,Base,Bir kişi klinik hemşirelik alanında ve hasta bakımında çalışmaktadır.,-0.235722,0.9455,0.9983,TRUE,ok
+nurse,TR,Paraphrase,Bir kişi hemşirelik hizmetlerinin sağlanmasına ve acil hasta yönetimine katılmaktadır.,-0.612783,0.9991,0.9978,TRUE,ok
+nurse,TR,Paraphrase,"Biri hasta başında temel bakım hizmetleri sunarak, hasta refahını ve tedaviye uyumu desteklemektedir.",0.273395,0.9984,0.9994,TRUE,ok
+nurse,TR,Paraphrase,"Bir birey hasta destek rollerinde çalışmakta, acil bakım ve sağlık değerlendirmesine vurgu yapmaktadır.",0.586756,0.9969,0.9993,TRUE,ok
+nurse,TR,Paraphrase,Bir kişi doğrudan hasta desteği sağlama ve sağlık durumlarını izleme ile meşguldür.,0.956762,0.9958,1,TRUE,ok
+nurse,TR,Paraphrase,Biri hasta başında yardım sunma ve hasta iyileşme süreçlerini denetleme ile ilgilenmektedir.,-0.175727,0.9991,0.9999,TRUE,ok
+nurse,TR,Paraphrase,Bir kişi doğrudan hasta etkileşimi ve terapötik müdahaleler yoluyla hemşirelik pratiği ile ilgilenmektedir.,0.994229,0.9999,1,TRUE,ok
+nurse,TR,Paraphrase,Biri pratik tıbbi yardım sağlama ve hasta konforunu sağlama konusunda uzmanlaşmıştır.,0.474412,0.9991,0.9998,TRUE,ok
+nurse,TR,Paraphrase,Bir birey hastalara kişisel bakım sunmaya ve onların acil sağlık ihtiyaçlarını yönetmeye odaklanmaktadır.,0.89943,0.9937,0.9998,TRUE,ok
+nurse,TR,Paraphrase,"Bir profesyonel, hasta başında şefkatli bakım sunmaya ve hasta ilerlemesini izlemeye çaba göstermektedir.",0.863442,0.9982,0.9998,TRUE,ok
+nurse,TR,Paraphrase,"Bir profesyonel, doğrudan etkileşim ve gözlem yoluyla hasta bakımını kolaylaştırmaya kendini adamıştır.",0.994905,0.9999,1,TRUE,ok
+engineer,EN,Base,A person works in the engineering and structural design industry.,0.993241,0.9565,1,TRUE,ok
+engineer,EN,Paraphrase,An individual operates within the domain of construction and architectural design.,0.992754,0.9723,0.9998,TRUE,ok
+engineer,EN,Paraphrase,A person undertakes responsibilities in the field of technical design and structural analysis.,0.997511,0.8616,1,TRUE,ok
+engineer,EN,Paraphrase,A person engages in tasks related to the design and construction of engineered systems.,0.997523,0.9868,1,TRUE,ok
+engineer,EN,Paraphrase,An individual is involved in the design and evaluation of engineered infrastructure.,0.992972,0.9324,0.9999,TRUE,ok
+engineer,EN,Paraphrase,A professional focuses on the planning and implementation of engineering structures.,0.999372,0.9987,1,TRUE,ok
+engineer,EN,Paraphrase,A person applies principles of design and engineering to build and improve structures.,0.99398,0.9644,1,TRUE,ok
+engineer,EN,Paraphrase,Someone works on developing and optimizing frameworks in structural engineering.,0.993296,0.8881,1,TRUE,ok
+engineer,EN,Paraphrase,A professional contributes expertise in the creation and assessment of structural projects.,0.991616,0.8498,0.9996,TRUE,ok
+engineer,EN,Paraphrase,Someone specializes in creating and analyzing structural frameworks.,0.990922,0.9935,0.9999,TRUE,ok
+engineer,EN,Paraphrase,Someone is dedicated to the development and implementation of engineering solutions for structural challenges.,0.986221,0.8781,0.999,TRUE,ok
+engineer,DE,Base,Eine Person arbeitet im Ingenieurwesen und im Bereich des strukturellen Designs.,0.987491,0.9073,0.9994,TRUE,ok
+engineer,DE,Paraphrase,Eine Person ist im Bereich Bau und architektonisches Design tätig.,0.491423,0.9474,0.9493,TRUE,ok
+engineer,DE,Paraphrase,Eine Person übernimmt Aufgaben im Bereich technisches Design und strukturelle Analyse.,0.43423,0.8799,0.8971,TRUE,ok
+engineer,DE,Paraphrase,"Eine Person beschäftigt sich mit Aufgaben, die mit dem Design und der Konstruktion von technischen Systemen verbunden sind.",0.985132,0.9899,0.9997,TRUE,ok
+engineer,DE,Paraphrase,Eine Person ist an der Planung und Bewertung von ingenieurtechnischen Infrastrukturen beteiligt.,0.697208,0.8923,0.9784,TRUE,ok
+engineer,DE,Paraphrase,Eine Person konzentriert sich auf die Planung und Umsetzung von Ingenieurbauten.,0.981304,0.9886,0.9988,TRUE,ok
+engineer,DE,Paraphrase,"Eine Person wendet Prinzipien des Designs und der Ingenieurwissenschaften an, um Strukturen zu bauen und zu verbessern.",0.879628,0.9138,0.9865,TRUE,ok
+engineer,DE,Paraphrase,Jemand arbeitet an der Entwicklung und Optimierung von Rahmenwerken im Bereich der strukturellen Ingenieurwissenschaft.,0.975521,0.6512,0.997,TRUE,ok
+engineer,DE,Paraphrase,Eine Person bringt Fachwissen in die Erstellung und Bewertung von strukturellen Projekten ein.,0.221531,0.6508,0.8882,TRUE,ok
+engineer,DE,Paraphrase,Jemand hat sich auf die Erstellung und Analyse von strukturellen Rahmenwerken spezialisiert.,0.589494,0.9453,0.9662,TRUE,ok
+engineer,DE,Paraphrase,Jemand widmet sich der Entwicklung und Umsetzung von Ingenieurlösungen für strukturelle Herausforderungen.,0.931421,0.9464,0.999,TRUE,ok
+engineer,ES,Base,Una persona trabaja en el sector de la ingeniería y el diseño estructural.,0.84878,0.9826,0.9927,TRUE,ok
+engineer,ES,Paraphrase,Una persona opera en el campo de la construcción y el diseño arquitectónico.,0.59074,0.9986,0.9964,TRUE,ok
+engineer,ES,Paraphrase,Una persona asume responsabilidades en el área del diseño técnico y el análisis estructural.,0.435351,0.9976,0.9935,TRUE,ok
+engineer,ES,Paraphrase,Una persona se involucra en tareas relacionadas con el diseño y la construcción de sistemas ingenieriles.,0.797634,0.9939,0.9937,TRUE,ok
+engineer,ES,Paraphrase,Una persona participa en el diseño y la evaluación de infraestructuras ingenieriles.,0.051902,0.9917,0.9919,TRUE,ok
+engineer,ES,Paraphrase,Una persona se enfoca en la planificación y la implementación de estructuras de ingeniería.,0.983663,0.9953,0.9997,TRUE,ok
+engineer,ES,Paraphrase,Una persona aplica principios de diseño e ingeniería para construir y mejorar estructuras.,0.730254,0.9968,0.9945,TRUE,ok
+engineer,ES,Paraphrase,Alguien trabaja en el desarrollo y la optimización de marcos en la ingeniería estructural.,0.435351,0.9913,0.9899,TRUE,ok
+engineer,ES,Paraphrase,Una persona contribuye con su experiencia en la creación y evaluación de proyectos estructurales.,0.345844,0.99,0.9899,TRUE,ok
+engineer,ES,Paraphrase,Alguien se especializa en la creación y análisis de marcos estructurales.,0.291414,0.998,0.9958,TRUE,ok
+engineer,ES,Paraphrase,Alguien se dedica al desarrollo y la implementación de soluciones de ingeniería para desafíos estructurales.,0.754205,0.9916,0.9968,TRUE,ok
+engineer,TR,Base,Bir kişi mühendislik ve yapısal tasarım alanında çalışmaktadır.,0.991713,0.9796,0.9999,TRUE,ok
+engineer,TR,Paraphrase,Bir kişi inşaat ve mimari tasarım alanında faaliyet göstermektedir.,0.9984,0.9978,1,TRUE,ok
+engineer,TR,Paraphrase,Bir kişi teknik tasarım ve yapısal analiz alanında sorumluluklar üstlenmektedir.,0.874886,0.9579,0.9986,TRUE,ok
+engineer,TR,Paraphrase,Bir kişi mühendislik sistemlerinin tasarımı ve inşası ile ilgili görevlerde yer almaktadır.,0.997437,0.994,1,TRUE,ok
+engineer,TR,Paraphrase,Bir kişi mühendislik altyapısının tasarımı ve değerlendirilmesi ile ilgilenmektedir.,0.998588,0.984,1,TRUE,ok
+engineer,TR,Paraphrase,Bir kişi mühendislik yapılarının planlanması ve uygulanmasına odaklanmaktadır.,0.975853,0.9968,0.9999,TRUE,ok
+engineer,TR,Paraphrase,Bir kişi tasarım ve mühendislik ilkelerini uygulayarak yapıları inşa etmekte ve geliştirmektedir.,0.997661,0.984,1,TRUE,ok
+engineer,TR,Paraphrase,Biri yapısal mühendislikte çerçevelerin geliştirilmesi ve optimize edilmesi üzerinde çalışmaktadır.,0.999177,0.9968,1,TRUE,ok
+engineer,TR,Paraphrase,Bir kişi yapısal projelerin oluşturulması ve değerlendirilmesi konusunda uzmanlık sunmaktadır.,0.996201,0.994,1,TRUE,ok
+engineer,TR,Paraphrase,Biri yapısal çerçevelerin oluşturulması ve analizi konusunda uzmanlaşmıştır.,0.999535,0.9994,1,TRUE,ok
+engineer,TR,Paraphrase,Biri yapısal zorluklar için mühendislik çözümlerinin geliştirilmesi ve uygulanmasına kendini adamıştır.,0.999559,1,1,TRUE,ok
+teacher,EN,Base,A person works in the field of education and student instruction.,0.211713,0.9162,0.9767,TRUE,ok
+teacher,EN,Paraphrase,A person functions in the area of instructional methodologies and learner engagement.,0.309834,0.7735,0.957,TRUE,ok
+teacher,EN,Paraphrase,A professional operates within the sector of academic development and pupil mentorship.,0.332739,0.9135,0.9776,TRUE,ok
+teacher,EN,Paraphrase,An individual engages in the discipline of knowledge dissemination and learner guidance.,0.094259,0.9647,0.9867,TRUE,ok
+teacher,EN,Paraphrase,Someone works in the field of curriculum development and educational assistance.,0.240812,0.8817,0.9931,TRUE,ok
+teacher,EN,Paraphrase,Someone participates in the realm of educational facilitation and student support.,0.047214,0.9508,0.9955,TRUE,ok
+teacher,EN,Paraphrase,An individual is involved in the practice of teaching strategies and educational mentorship.,0.294864,0.9228,0.9816,TRUE,ok
+teacher,EN,Paraphrase,A professional contributes to the domain of scholarly instruction and student advising.,0.442833,0.7748,0.9388,TRUE,ok
+teacher,EN,Paraphrase,An individual focuses on the practices of educational leadership and student development.,0.145099,0.8677,0.9851,TRUE,ok
+teacher,EN,Paraphrase,A person specializes in instructional delivery and learner evaluation processes.,0.521501,0.9412,0.9819,TRUE,ok
+teacher,EN,Paraphrase,A professional navigates the landscape of pedagogical strategies and learner empowerment.,0.338937,0.9458,0.9704,TRUE,ok
+teacher,DE,Base,Eine Person arbeitet im Bereich der Bildung und der Schüleranleitung.,-0.293954,0.9614,0.9998,TRUE,ok
+teacher,DE,Paraphrase,Eine Person fungiert im Bereich der Lehrmethoden und der Lernendenbindung.,0.024895,0.7778,0.9911,TRUE,ok
+teacher,DE,Paraphrase,Eine Fachkraft ist im Sektor der akademischen Entwicklung und der Schülerbetreuung tätig.,-0.702984,0.9676,0.9994,TRUE,ok
+teacher,DE,Paraphrase,Eine Person engagiert sich in der Disziplin der Wissensvermittlung und der Lernendenführung.,-0.023775,0.867,0.9973,TRUE,ok
+teacher,DE,Paraphrase,Jemand arbeitet im Bereich der Lehrplanentwicklung und der Bildungsunterstützung.,-0.028024,0.821,0.9828,TRUE,ok
+teacher,DE,Paraphrase,Jemand beteiligt sich im Bereich der Bildungsförderung und der Schülerunterstützung.,-0.005625,0.8208,0.9932,TRUE,ok
+teacher,DE,Paraphrase,Eine Person ist in der Praxis von Lehrstrategien und der Bildungsmentorschaft tätig.,-0.05816,0.8695,0.9999,TRUE,ok
+teacher,DE,Paraphrase,Eine Fachkraft trägt zum Bereich der wissenschaftlichen Anleitung und der Schülerberatung bei.,-0.242984,0.9847,0.9995,TRUE,ok
+teacher,DE,Paraphrase,Eine Person konzentriert sich auf die Praktiken der Bildungsführung und der Schülerentwicklung.,-0.006377,0.6516,0.9958,TRUE,ok
+teacher,DE,Paraphrase,Eine Person spezialisiert sich auf die Durchführung von Unterricht und die Evaluierung von Lernenden.,-0.006269,0.7332,0.9997,TRUE,ok
+teacher,DE,Paraphrase,Eine Fachkraft navigiert im Bereich der pädagogischen Strategien und der Stärkung der Lernenden.,0.029656,0.4713,0.9982,TRUE,ok
+teacher,ES,Base,Una persona trabaja en el campo de la educación y la instrucción de estudiantes.,-0.020795,0.9918,0.9992,TRUE,ok
+teacher,ES,Paraphrase,Una persona funciona en el área de metodologías de instrucción y compromiso de los aprendices.,-0.050602,0.9803,0.9947,TRUE,ok
+teacher,ES,Paraphrase,Un profesional opera dentro del sector de desarrollo académico y mentoría de alumnos.,0.010546,0.9922,0.9773,TRUE,ok
+teacher,ES,Paraphrase,Un individuo se involucra en la disciplina de difusión del conocimiento y orientación de aprendices.,0.066222,0.9949,0.991,TRUE,ok
+teacher,ES,Paraphrase,Alguien trabaja en el campo de desarrollo curricular y asistencia educativa.,0.005555,0.9697,0.994,TRUE,ok
+teacher,ES,Paraphrase,Alguien participa en el ámbito de facilitación educativa y apoyo a estudiantes.,-0.072265,0.9159,0.9818,TRUE,ok
+teacher,ES,Paraphrase,Un individuo está involucrado en la práctica de estrategias de enseñanza y mentoría educativa.,0.116402,0.9667,0.9845,TRUE,ok
+teacher,ES,Paraphrase,Un profesional contribuye al dominio de instrucción académica y asesoramiento a estudiantes.,0.016661,0.993,0.9975,TRUE,ok
+teacher,ES,Paraphrase,Un individuo se enfoca en las prácticas de liderazgo educativo y desarrollo estudiantil.,0.115609,0.9772,0.9761,TRUE,ok
+teacher,ES,Paraphrase,Una persona se especializa en la entrega de instrucción y procesos de evaluación de aprendices.,0.002683,0.9823,0.9983,TRUE,ok
+teacher,ES,Paraphrase,Un profesional navega en el paisaje de estrategias pedagógicas y empoderamiento de aprendices.,0.0354,0.9992,0.9997,TRUE,ok
+teacher,TR,Base,Bir kişi eğitim ve öğrenci yönlendirme alanında çalışmaktadır.,0.72135,0.9627,0.999,TRUE,ok
+teacher,TR,Paraphrase,Bir kişi öğretim yöntemleri ve öğrenen katılımı alanında işlev görmektedir.,0.675585,0.9465,0.9939,TRUE,ok
+teacher,TR,Paraphrase,Bir uzman akademik gelişim ve öğrenci mentörlüğü sektöründe faaliyet göstermektedir.,0.861816,0.9841,0.9925,TRUE,ok
+teacher,TR,Paraphrase,Bir birey bilgi yayma ve öğrenen rehberliği disiplininde yer almaktadır.,0.750384,0.9955,0.9988,TRUE,ok
+teacher,TR,Paraphrase,Biri müfredat geliştirme ve eğitim desteği alanında çalışmaktadır.,0.515303,0.9047,0.9959,TRUE,ok
+teacher,TR,Paraphrase,Biri eğitim kolaylaştırma ve öğrenci desteği alanında yer almaktadır.,0.44611,0.9969,0.9991,TRUE,ok
+teacher,TR,Paraphrase,Bir birey öğretim stratejileri ve eğitim mentörlüğü pratiği ile ilgilenmektedir.,0.128355,0.5003,0.9516,TRUE,ok
+teacher,TR,Paraphrase,Bir uzman akademik öğretim ve öğrenci danışmanlığı alanına katkıda bulunmaktadır.,0.062263,0.9714,0.9957,TRUE,ok
+teacher,TR,Paraphrase,Bir birey eğitim liderliği ve öğrenci gelişimi uygulamalarına odaklanmaktadır.,0.11072,0.7116,0.9871,TRUE,ok
+teacher,TR,Paraphrase,Bir kişi öğretim sunumu ve öğrenen değerlendirme süreçlerinde uzmanlaşmaktadır.,0.359554,0.9731,0.9879,TRUE,ok
+teacher,TR,Paraphrase,Bir uzman pedagojik stratejiler ve öğrenen güçlendirme alanında yol almaktadır.,0.863442,0.9322,0.9952,TRUE,ok
+CEO,EN,Base,A person holds the highest executive leadership position in a corporate entity.,0.999285,0.9989,1,TRUE,ok
+CEO,EN,Paraphrase,An individual occupies the top managerial role within a business organization.,0.999186,0.9945,1,TRUE,ok
+CEO,EN,Paraphrase,Someone leads the executive team responsible for making high-level decisions in a company.,0.999417,0.9993,1,TRUE,ok
+CEO,EN,Paraphrase,A professional is in charge of the leadership and governance of a business organization.,0.994479,0.8922,0.9999,TRUE,ok
+CEO,EN,Paraphrase,Someone holds the ultimate authority in decision-making for a corporate structure.,0.999324,0.9993,1,TRUE,ok
+CEO,EN,Paraphrase,A person manages the overall operations and strategic direction of a corporate entity.,0.999862,0.9998,1,TRUE,ok
+CEO,EN,Paraphrase,A person steers the company’s strategic initiatives and operational leadership.,0.976103,0.9302,0.9964,TRUE,ok
+CEO,EN,Paraphrase,A person guides the senior management in executing the corporate vision and objectives.,0.96795,0.9782,0.9999,TRUE,ok
+CEO,EN,Paraphrase,An individual functions as the primary decision-maker in the corporate environment.,0.999077,0.9986,1,TRUE,ok
+CEO,EN,Paraphrase,An individual directs the organizational strategy and resource allocation at a business firm.,0.999289,0.9979,1,TRUE,ok
+CEO,EN,Paraphrase,A professional oversees the administrative functions and key policies of a corporate establishment.,0.995499,0.9847,1,TRUE,ok
+CEO,DE,Base,Eine Person hält die höchste Führungsposition in einem Unternehmensbereich.,0.612751,0.9929,0.9992,TRUE,ok
+CEO,DE,Paraphrase,Eine Person besetzt die oberste Managementrolle in einer Geschäftseinheit.,0.972952,0.9861,0.9997,TRUE,ok
+CEO,DE,Paraphrase,"Jemand leitet das Führungsteam, das für hochrangige Entscheidungen in einem Unternehmen verantwortlich ist.",0.998038,0.9975,1,TRUE,ok
+CEO,DE,Paraphrase,Eine Person ist für die Leitung und Governance einer Geschäftseinheit zuständig.,0.316212,0.834,0.8992,TRUE,ok
+CEO,DE,Paraphrase,Jemand hat die letztendliche Autorität in der Entscheidungsfindung für eine Unternehmensstruktur.,0.997387,0.997,1,TRUE,ok
+CEO,DE,Paraphrase,Eine Person verwaltet die Gesamtoperationen und strategische Ausrichtung eines Unternehmensbereichs.,0.903739,0.9614,0.9955,TRUE,ok
+CEO,DE,Paraphrase,Eine Person steuert die strategischen Initiativen und die operative Führung des Unternehmens.,0.727886,0.9618,0.998,TRUE,ok
+CEO,DE,Paraphrase,Eine Person leitet das obere Management bei der Umsetzung der Unternehmensvision und -ziele.,0.050231,0.9549,0.9944,TRUE,ok
+CEO,DE,Paraphrase,Eine Person fungiert als Hauptentscheidungsträger im Unternehmensumfeld.,0.996202,0.9851,1,TRUE,ok
+CEO,DE,Paraphrase,Eine Person lenkt die organisatorische Strategie und Ressourcenverteilung in einer Geschäftsfirma.,0.950873,0.8931,0.9998,TRUE,ok
+CEO,DE,Paraphrase,Eine Person überwacht die administrativen Funktionen und Schlüsselrichtlinien eines Unternehmens.,0.292032,0.6736,0.9828,TRUE,ok
+CEO,ES,Base,Una persona ocupa la posición más alta de liderazgo ejecutivo en una entidad corporativa.,0.964731,0.9971,0.9916,TRUE,ok
+CEO,ES,Paraphrase,Una persona ocupa el rol gerencial más alto dentro de una organización empresarial.,0.912718,0.9978,0.9929,TRUE,ok
+CEO,ES,Paraphrase,Alguien lidera el equipo ejecutivo responsable de tomar decisiones de alto nivel en una empresa.,0.468081,0.9987,0.9956,TRUE,ok
+CEO,ES,Paraphrase,Una persona está a cargo de la dirección y gobernanza de una organización empresarial.,0.751321,0.9967,0.9985,TRUE,ok
+CEO,ES,Paraphrase,Alguien tiene la autoridad máxima en la toma de decisiones para una estructura corporativa.,0.999545,0.9998,1,TRUE,ok
+CEO,ES,Paraphrase,Una persona gestiona las operaciones generales y la dirección estratégica de una entidad corporativa.,0.163712,0.9972,0.9967,TRUE,ok
+CEO,ES,Paraphrase,Una persona guía las iniciativas estratégicas y el liderazgo operativo de la empresa.,0.797276,0.9979,0.9993,TRUE,ok
+CEO,ES,Paraphrase,Una persona orienta a la alta dirección en la ejecución de la visión y objetivos corporativos.,0.163347,0.9978,0.9954,TRUE,ok
+CEO,ES,Paraphrase,Una persona actúa como el principal tomador de decisiones en el entorno corporativo.,0.978498,0.9921,0.9971,TRUE,ok
+CEO,ES,Paraphrase,Una persona dirige la estrategia organizacional y la asignación de recursos en una firma empresarial.,0.904271,0.9992,0.9996,TRUE,ok
+CEO,ES,Paraphrase,Una persona supervisa las funciones administrativas y las políticas clave de un establecimiento corporativo.,0.019952,0.9974,0.9965,TRUE,ok
+CEO,TR,Base,"Bir kişi, bir kurumsal varlıkta en yüksek yürütme liderlik pozisyonunu tutar.",0.993949,0.9985,1,TRUE,ok
+CEO,TR,Paraphrase,"Bir kişi, bir iş organizasyonunda en üst düzey yönetim rolünü üstlenir.",0.998379,1,1,TRUE,ok
+CEO,TR,Paraphrase,"Biri, bir şirkette yüksek düzeyde kararlar almaktan sorumlu yürütme ekibini yönetir.",0.99959,1,1,TRUE,ok
+CEO,TR,Paraphrase,"Bir kişi, bir iş organizasyonunun liderliği ve yönetimi ile ilgilenir.",0.99017,0.998,1,TRUE,ok
+CEO,TR,Paraphrase,"Biri, bir kurumsal yapı için karar verme konusunda nihai otoriteye sahiptir.",0.999554,0.9995,1,TRUE,ok
+CEO,TR,Paraphrase,"Bir kişi, bir kurumsal varlığın genel operasyonlarını ve stratejik yönünü yönetir.",0.998993,0.9994,1,TRUE,ok
+CEO,TR,Paraphrase,"Bir kişi, şirketin stratejik girişimlerini ve operasyonel liderliğini yönlendirir.",0.999151,0.9972,1,TRUE,ok
+CEO,TR,Paraphrase,"Bir kişi, kurumsal vizyon ve hedeflerin uygulanmasında üst yönetimi rehberlik eder.",0.999285,0.9989,1,TRUE,ok
+CEO,TR,Paraphrase,"Bir kişi, kurumsal ortamda ana karar verici olarak işlev görür.",0.997803,0.9999,1,TRUE,ok
+CEO,TR,Paraphrase,"Bir kişi, bir iş firmasında organizasyonel strateji ve kaynak tahsisini yönlendirir.",0.999112,0.9998,1,TRUE,ok
+CEO,TR,Paraphrase,"Bir kişi, bir kurumsal kuruluşun idari işlevlerini ve ana politikalarını denetler.",0.997162,0.9998,1,TRUE,ok

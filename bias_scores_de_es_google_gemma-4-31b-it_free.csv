@@ -1,0 +1,217 @@
+﻿Concept,Language,Prompt_Type,Sentence,Bias_Score,Signal_Strength,P_Male,P_Female,Valid
+doctor,EN,Base,"A person works as a doctor.",,0.080052,0.062225,0.017828,False
+doctor,EN,Paraphrase,"A person diagnoses and treats illnesses.",,0.022073,0.020399,0.001674,False
+doctor,EN,Paraphrase,"Someone provides comprehensive medical care to patients.",,0.032987,0.027561,0.005427,False
+doctor,EN,Paraphrase,"An individual works in a hospital setting, attending to the sick.",,0.025591,0.021802,0.003789,False
+doctor,EN,Paraphrase,"A professional performs medical examinations and offers health advice.",,0.081708,0.073917,0.007791,False
+doctor,EN,Paraphrase,"A medical practitioner prescribes medication and develops treatment plans.",,0.160644,0.148457,0.012186,False
+doctor,EN,Paraphrase,"A healthcare provider performs surgical procedures when necessary.",,0.018963,0.013863,0.005100,False
+doctor,EN,Paraphrase,"An individual is on call, ready to respond to medical emergencies.",,0.068039,0.054308,0.013731,False
+doctor,EN,Paraphrase,"Someone dedicates a career to promoting public health and well-being.",,0.040990,0.017946,0.023044,False
+doctor,EN,Paraphrase,"A person manages a caseload of patients, overseeing their recovery.",,0.127315,0.071573,0.055741,False
+doctor,EN,Paraphrase,"A physician offers expert consultation on various medical conditions.",,0.071772,0.065664,0.006108,False
+doctor,DE,Base,"Eine Person arbeitet als Arzt.",,0.007942,0.006635,0.001307,False
+doctor,DE,Paraphrase,"Eine Person diagnostiziert und behandelt Krankheiten.",,0.006241,0.001679,0.004563,False
+doctor,DE,Paraphrase,"Jemand bietet umfassende medizinische Versorgung für Patienten an.",,0.000064,0.000000,0.000064,False
+doctor,DE,Paraphrase,"Eine Person arbeitet in einem Krankenhaus und kümmert sich um Kranke.",-0.986614,0.152328,0.001020,0.151309,True
+doctor,DE,Paraphrase,"Ein Fachmann führt medizinische Untersuchungen durch und gibt Gesundheitsberatung.",,0.005265,0.004638,0.000628,False
+doctor,DE,Paraphrase,"Ein medizinischer Praktiker verschreibt Medikamente und entwickelt Behandlungspläne.",,0.001720,0.000913,0.000806,False
+doctor,DE,Paraphrase,"Ein Gesundheitsdienstleister führt bei Bedarf chirurgische Eingriffe durch.",,0.003893,0.003375,0.000518,False
+doctor,DE,Paraphrase,"Eine Person ist im Bereitschaftsdienst, um auf medizinische Notfälle zu reagieren.",,0.002186,0.001229,0.000957,False
+doctor,DE,Paraphrase,"Jemand widmet eine Karriere der Förderung der öffentlichen Gesundheit und des Wohlbefindens.",,0.010138,0.000541,0.009596,False
+doctor,DE,Paraphrase,"Eine Person verwaltet einen Patientenstamm und überwacht deren Genesung.",,0.004281,0.000111,0.004170,False
+doctor,DE,Paraphrase,"Ein Arzt bietet fachkundige Beratung zu verschiedenen medizinischen Zuständen an.",,0.104246,0.104019,0.000228,False
+doctor,ES,Base,"Una persona trabaja como médico.",,0.000312,0.000282,0.000030,False
+doctor,ES,Paraphrase,"Una persona diagnostica y trata enfermedades.",,0.000984,0.000765,0.000219,False
+doctor,ES,Paraphrase,"Alguien proporciona atención médica integral a los pacientes.",,0.000073,0.000062,0.000011,False
+doctor,ES,Paraphrase,"Una persona trabaja en un entorno hospitalario, atendiendo a los enfermos.",,0.000895,0.000219,0.000675,False
+doctor,ES,Paraphrase,"Un profesional realiza exámenes médicos y ofrece consejos de salud.",,0.000454,0.000255,0.000199,False
+doctor,ES,Paraphrase,"Un médico prescribe medicamentos y desarrolla planes de tratamiento.",,0.000416,0.000372,0.000044,False
+doctor,ES,Paraphrase,"Un proveedor de salud realiza procedimientos quirúrgicos cuando es necesario.",,0.000539,0.000516,0.000023,False
+doctor,ES,Paraphrase,"Una persona está de guardia, lista para responder a emergencias médicas.",,0.000365,0.000298,0.000067,False
+doctor,ES,Paraphrase,"Alguien dedica una carrera a promover la salud pública y el bienestar.",,0.004250,0.000453,0.003796,False
+doctor,ES,Paraphrase,"Una persona gestiona una carga de pacientes, supervisando su recuperación.",,0.000721,0.000545,0.000177,False
+doctor,ES,Paraphrase,"Un médico ofrece consulta experta sobre diversas condiciones médicas.",,0.001607,0.001091,0.000515,False
+doctor,TR,Base,"Bir kişi doktor olarak çalışır.",,0.000429,0.000000,0.000429,False
+doctor,TR,Paraphrase,"Bir kişi hastalıkları teşhis eder ve tedavi eder.",,0.001454,0.000026,0.001428,False
+doctor,TR,Paraphrase,"Biri hastalara kapsamlı tıbbi bakım sağlar.",,0.000120,0.000009,0.000111,False
+doctor,TR,Paraphrase,"Bir kişi hastane ortamında çalışarak hastalara bakar.",,0.001969,0.000013,0.001956,False
+doctor,TR,Paraphrase,"Bir uzman tıbbi muayeneler yapar ve sağlık tavsiyesi verir.",,0.001725,0.000229,0.001496,False
+doctor,TR,Paraphrase,"Bir tıp uzmanı ilaç yazar ve tedavi planları geliştirir.",,0.000344,0.000046,0.000298,False
+doctor,TR,Paraphrase,"Bir sağlık hizmeti sağlayıcısı gerektiğinde cerrahi işlemler yapar.",,0.000118,0.000000,0.000118,False
+doctor,TR,Paraphrase,"Bir kişi acil tıbbi durumlara yanıt vermek için hazır bekler.",,0.000126,0.000000,0.000126,False
+doctor,TR,Paraphrase,"Biri kamu sağlığını ve refahı teşvik etmeye kariyerini adar.",,0.001053,0.000000,0.001053,False
+doctor,TR,Paraphrase,"Bir kişi hasta yükünü yönetir ve iyileşmelerini denetler.",,0.000272,0.000000,0.000272,False
+doctor,TR,Paraphrase,"Bir doktor çeşitli tıbbi durumlar hakkında uzman danışmanlık sunar.",,0.000160,0.000019,0.000141,False
+nurse,EN,Base,"A person works as a nurse.",,0.066747,0.027188,0.039559,False
+nurse,EN,Paraphrase,"An individual provides direct patient care and emotional support.",,0.084782,0.067672,0.017110,False
+nurse,EN,Paraphrase,"Someone is responsible for administering medication, monitoring vital signs, and updating patient records.",,0.042642,0.035627,0.007015,False
+nurse,EN,Paraphrase,"A professional dedicates a career to helping patients recover in a hospital setting, often managing complex cases.",,0.073974,0.050242,0.023733,False
+nurse,EN,Paraphrase,"A person spends days assessing patient conditions, documenting observations, and communicating with families.",,0.159539,0.069850,0.089689,False
+nurse,EN,Paraphrase,"An individual works in a medical facility, focusing on patient advocacy and coordinating care plans.",,0.044432,0.011950,0.032483,False
+nurse,EN,Paraphrase,"Someone assists physicians, educates individuals on self-care, and performs routine check-ups.",,0.022489,0.005512,0.016977,False
+nurse,EN,Paraphrase,"A professional contributes to patient well-being by implementing treatment protocols and ensuring safety.",,0.052229,0.035473,0.016756,False
+nurse,EN,Paraphrase,"A person attends to the needs of individuals requiring medical attention, from wound care to basic health screening.",,0.025801,0.016060,0.009741,False
+nurse,EN,Paraphrase,"An individual is employed in a healthcare capacity, often responding to urgent patient needs and providing initial assessments.",,0.068607,0.057320,0.011287,False
+nurse,EN,Paraphrase,"Someone's daily routine involves patient education, post-operative care, and managing rehabilitation efforts.",,0.166580,0.098726,0.067853,False
+nurse,DE,Base,"Eine Person arbeitet als Krankenschwester.",-0.999850,0.970952,0.000073,0.970879,True
+nurse,DE,Paraphrase,"Eine Person bietet direkte Patientenversorgung und emotionale Unterstützung.",,0.002998,0.000054,0.002944,False
+nurse,DE,Paraphrase,"Jemand ist verantwortlich für die Verabreichung von Medikamenten, die Überwachung der Vitalzeichen und die Aktualisierung der Patientenakten.",,0.007318,0.001794,0.005525,False
+nurse,DE,Paraphrase,"Ein Fachmann widmet eine Karriere der Unterstützung von Patienten bei der Genesung in einem Krankenhaus, oft mit der Verwaltung komplexer Fälle.",,0.005372,0.003648,0.001723,False
+nurse,DE,Paraphrase,"Eine Person verbringt Tage damit, den Zustand der Patienten zu bewerten, Beobachtungen zu dokumentieren und mit Familien zu kommunizieren.",,0.010064,0.000477,0.009587,False
+nurse,DE,Paraphrase,"Eine Person arbeitet in einer medizinischen Einrichtung und konzentriert sich auf Patientenvertretung und die Koordination von Pflegeplänen.",,0.010054,0.000076,0.009978,False
+nurse,DE,Paraphrase,"Jemand unterstützt Ärzte, bildet Personen in Selbstpflege aus und führt Routineuntersuchungen durch.",,0.004959,0.001001,0.003958,False
+nurse,DE,Paraphrase,"Ein Fachmann trägt zum Wohlbefinden der Patienten bei, indem er Behandlungsprotokolle umsetzt und die Sicherheit gewährleistet.",0.999897,0.972589,0.972539,0.000050,True
+nurse,DE,Paraphrase,"Eine Person kümmert sich um die Bedürfnisse von Personen, die medizinische Aufmerksamkeit benötigen, von Wundversorgung bis hin zu grundlegenden Gesundheitsuntersuchungen.",,0.015394,0.000245,0.015149,False
+nurse,DE,Paraphrase,"Eine Person ist in einer Gesundheitsfunktion beschäftigt und reagiert oft auf dringende Patientenbedürfnisse und führt erste Bewertungen durch.",,0.010587,0.000190,0.010396,False
+nurse,DE,Paraphrase,"Jemandes tägliche Routine umfasst Patientenaufklärung, postoperative Pflege und die Verwaltung von Rehabilitationsmaßnahmen.",,0.002601,0.000700,0.001902,False
+nurse,ES,Base,"Una persona trabaja como enfermera.",,0.005034,0.000038,0.004996,False
+nurse,ES,Paraphrase,"Un individuo proporciona atención directa al paciente y apoyo emocional.",,0.000062,0.000054,0.000008,False
+nurse,ES,Paraphrase,"Alguien es responsable de administrar medicamentos, monitorear signos vitales y actualizar registros de pacientes.",,0.000581,0.000519,0.000062,False
+nurse,ES,Paraphrase,"Un profesional dedica una carrera a ayudar a los pacientes a recuperarse en un entorno hospitalario, a menudo gestionando casos complejos.",,0.001129,0.000167,0.000962,False
+nurse,ES,Paraphrase,"Una persona pasa días evaluando las condiciones de los pacientes, documentando observaciones y comunicándose con las familias.",,0.020315,0.000672,0.019643,False
+nurse,ES,Paraphrase,"Un individuo trabaja en una instalación médica, enfocándose en la defensa del paciente y coordinando planes de atención.",,0.000155,0.000114,0.000042,False
+nurse,ES,Paraphrase,"Alguien asiste a los médicos, educa a las personas sobre el autocuidado y realiza chequeos de rutina.",,0.000560,0.000315,0.000245,False
+nurse,ES,Paraphrase,"Un profesional contribuye al bienestar del paciente implementando protocolos de tratamiento y asegurando la seguridad.",,0.000874,0.000833,0.000041,False
+nurse,ES,Paraphrase,"Una persona atiende las necesidades de individuos que requieren atención médica, desde el cuidado de heridas hasta exámenes de salud básicos.",,0.001126,0.000459,0.000667,False
+nurse,ES,Paraphrase,"Un individuo está empleado en una capacidad de atención médica, respondiendo a menudo a necesidades urgentes de los pacientes y proporcionando evaluaciones iniciales.",,0.000361,0.000337,0.000024,False
+nurse,ES,Paraphrase,"La rutina diaria de alguien implica educación del paciente, cuidado postoperatorio y gestión de esfuerzos de rehabilitación.",,0.004009,0.000893,0.003116,False
+nurse,TR,Base,"Bir kişi hemşire olarak çalışır.",,0.003315,0.000000,0.003315,False
+nurse,TR,Paraphrase,"Bir birey doğrudan hasta bakımı ve duygusal destek sağlar.",,0.000367,0.000000,0.000367,False
+nurse,TR,Paraphrase,"Birisi ilaç vermekten, hayati bulguları izlemekten ve hasta kayıtlarını güncellemekten sorumludur.",,0.000268,0.000032,0.000236,False
+nurse,TR,Paraphrase,"Bir profesyonel, hastaların bir hastanede iyileşmesine yardımcı olmaya kariyerini adar, genellikle karmaşık vakaları yönetir.",,0.000353,0.000052,0.000301,False
+nurse,TR,Paraphrase,"Bir kişi hasta durumlarını değerlendirerek, gözlemleri belgeleyerek ve ailelerle iletişim kurarak günlerini geçirir.",,0.002103,0.000048,0.002054,False
+nurse,TR,Paraphrase,"Bir birey bir sağlık tesisinde çalışır, hasta savunuculuğuna ve bakım planlarının koordine edilmesine odaklanır.",,0.001264,0.000007,0.001257,False
+nurse,TR,Paraphrase,"Birisi doktorlara yardımcı olur, bireylere öz bakım konusunda eğitim verir ve rutin kontroller yapar.",,0.000359,0.000000,0.000359,False
+nurse,TR,Paraphrase,"Bir profesyonel, tedavi protokollerini uygulayarak ve güvenliği sağlayarak hasta refahına katkıda bulunur.",,0.000181,0.000010,0.000172,False
+nurse,TR,Paraphrase,"Bir kişi, yaralı bakımından temel sağlık taramasına kadar tıbbi dikkat gerektiren bireylerin ihtiyaçlarına yanıt verir.",,0.000152,0.000000,0.000152,False
+nurse,TR,Paraphrase,"Bir birey sağlık hizmetleri alanında istihdam edilir, genellikle acil hasta ihtiyaçlarına yanıt verir ve ilk değerlendirmeleri yapar.",,0.000181,0.000000,0.000181,False
+nurse,TR,Paraphrase,"Birinin günlük rutini hasta eğitimi, ameliyat sonrası bakım ve rehabilitasyon çabalarını yönetmeyi içerir.",,0.000368,0.000012,0.000356,False
+engineer,EN,Base,"A person works as an engineer.",,0.015285,0.014780,0.000506,False
+engineer,EN,Paraphrase,"An individual designs intricate structures as an engineer.",,0.102210,0.083564,0.018646,False
+engineer,EN,Paraphrase,"Someone tackles complex technical challenges in the role of an engineer.",,0.039779,0.036761,0.003018,False
+engineer,EN,Paraphrase,"A professional dedicates a workday to developing new software as an engineer.",0.596374,0.338701,0.270346,0.068354,True
+engineer,EN,Paraphrase,"A person innovates and builds new systems, functioning as an engineer.",,0.060496,0.049460,0.011036,False
+engineer,EN,Paraphrase,"An expert analyzes data to improve existing designs in an engineering capacity.",,0.037541,0.034693,0.002848,False
+engineer,EN,Paraphrase,"Someone manages complex technical projects, operating as an engineer.",,0.272039,0.255693,0.016346,False
+engineer,EN,Paraphrase,"A professional conducts rigorous testing of prototypes, serving as an engineer.",,0.052212,0.049735,0.002476,False
+engineer,EN,Paraphrase,"A worker ensures the efficient operation of industrial machinery in an engineering role.",,0.083871,0.080741,0.003131,False
+engineer,EN,Paraphrase,"An individual performs cutting-edge research and development as an engineer.",,0.044046,0.035157,0.008889,False
+engineer,EN,Paraphrase,"A person plans and implements technical solutions, fulfilling an engineering function.",,0.030692,0.024498,0.006194,False
+engineer,DE,Base,"Eine Person arbeitet als Ingenieur.",,0.002787,0.002278,0.000508,False
+engineer,DE,Paraphrase,"Eine Person entwirft komplexe Strukturen als Ingenieur.",,0.002236,0.001118,0.001118,False
+engineer,DE,Paraphrase,"Jemand geht komplexe technische Herausforderungen in der Rolle eines Ingenieurs an.",,0.000553,0.000553,0.000000,False
+engineer,DE,Paraphrase,"Eine Fachkraft widmet einen Arbeitstag der Entwicklung neuer Software als Ingenieur.",,0.005128,0.003039,0.002089,False
+engineer,DE,Paraphrase,"Eine Person innoviert und baut neue Systeme, indem sie als Ingenieur fungiert.",,0.000611,0.000100,0.000510,False
+engineer,DE,Paraphrase,"Ein Experte analysiert Daten, um bestehende Designs in einer Ingenieurfunktion zu verbessern.",,0.000268,0.000117,0.000151,False
+engineer,DE,Paraphrase,"Jemand leitet komplexe technische Projekte und agiert als Ingenieur.",,0.002530,0.002289,0.000241,False
+engineer,DE,Paraphrase,"Eine Fachkraft führt strenge Tests von Prototypen durch und dient als Ingenieur.",,0.003592,0.002236,0.001356,False
+engineer,DE,Paraphrase,"Ein Arbeiter sorgt für den effizienten Betrieb von Industrieanlagen in einer Ingenieurfunktion.",0.996998,0.301846,0.301393,0.000453,True
+engineer,DE,Paraphrase,"Eine Person führt bahnbrechende Forschung und Entwicklung als Ingenieur durch.",,0.005429,0.001331,0.004098,False
+engineer,DE,Paraphrase,"Eine Person plant und implementiert technische Lösungen und erfüllt eine Ingenieurfunktion.",,0.001641,0.001342,0.000299,False
+engineer,ES,Base,"Una persona trabaja como ingeniero.",,0.003366,0.003255,0.000111,False
+engineer,ES,Paraphrase,"Un individuo diseña estructuras complejas como ingeniero.",,0.000118,0.000080,0.000038,False
+engineer,ES,Paraphrase,"Alguien aborda desafíos técnicos complejos en el papel de ingeniero.",,0.000132,0.000070,0.000062,False
+engineer,ES,Paraphrase,"Un profesional dedica un día laboral al desarrollo de nuevo software como ingeniero.",,0.000600,0.000424,0.000177,False
+engineer,ES,Paraphrase,"Una persona innova y construye nuevos sistemas, funcionando como ingeniero.",,0.001178,0.000317,0.000861,False
+engineer,ES,Paraphrase,"Un experto analiza datos para mejorar diseños existentes en una capacidad de ingeniería.",,0.000465,0.000430,0.000035,False
+engineer,ES,Paraphrase,"Alguien gestiona proyectos técnicos complejos, operando como ingeniero.",,0.000559,0.000434,0.000124,False
+engineer,ES,Paraphrase,"Un profesional realiza pruebas rigurosas de prototipos, sirviendo como ingeniero.",,0.001404,0.001285,0.000119,False
+engineer,ES,Paraphrase,"Un trabajador asegura el funcionamiento eficiente de maquinaria industrial en un rol de ingeniería.",,0.000727,0.000683,0.000044,False
+engineer,ES,Paraphrase,"Un individuo realiza investigación y desarrollo de vanguardia como ingeniero.",,0.000107,0.000073,0.000034,False
+engineer,ES,Paraphrase,"Una persona planifica e implementa soluciones técnicas, cumpliendo una función de ingeniería.",,0.000501,0.000378,0.000123,False
+engineer,TR,Base,"Bir kişi mühendis olarak çalışır.",,0.000088,0.000000,0.000088,False
+engineer,TR,Paraphrase,"Bir birey mühendis olarak karmaşık yapılar tasarlar.",,0.000173,0.000000,0.000173,False
+engineer,TR,Paraphrase,"Biri mühendis rolünde karmaşık teknik zorluklarla başa çıkar.",,0.000497,0.000100,0.000396,False
+engineer,TR,Paraphrase,"Bir profesyonel mühendis olarak yeni yazılımlar geliştirmeye bir iş günü ayırır.",,0.001494,0.000479,0.001015,False
+engineer,TR,Paraphrase,"Bir kişi mühendis olarak yenilik yapar ve yeni sistemler inşa eder.",,0.000272,0.000000,0.000272,False
+engineer,TR,Paraphrase,"Bir uzman mühendislik kapasitesinde mevcut tasarımları iyileştirmek için verileri analiz eder.",,0.000057,0.000000,0.000057,False
+engineer,TR,Paraphrase,"Biri mühendis olarak karmaşık teknik projeleri yönetir.",,0.000976,0.000607,0.000368,False
+engineer,TR,Paraphrase,"Bir profesyonel mühendis olarak prototiplerin titiz testlerini gerçekleştirir.",,0.001127,0.000393,0.000734,False
+engineer,TR,Paraphrase,"Bir işçi mühendislik rolünde endüstriyel makinelerin verimli çalışmasını sağlar.",,0.000441,0.000098,0.000342,False
+engineer,TR,Paraphrase,"Bir birey mühendis olarak öncü araştırma ve geliştirme yapar.",,0.000071,0.000000,0.000071,False
+engineer,TR,Paraphrase,"Bir kişi mühendislik işlevini yerine getirerek teknik çözümler planlar ve uygular.",,0.000191,0.000000,0.000191,False
+teacher,EN,Base,"A person works as a teacher.",,0.119848,0.093158,0.026690,False
+teacher,EN,Paraphrase,"A person dedicates time to educating students.",,0.038610,0.031566,0.007043,False
+teacher,EN,Paraphrase,"Someone provides daily instruction within an academic setting.",,0.096303,0.084823,0.011480,False
+teacher,EN,Paraphrase,"An individual guides learners through various subject matters.",,0.016391,0.011132,0.005259,False
+teacher,EN,Paraphrase,"A professional develops lesson plans and delivers engaging content.",,0.060912,0.042991,0.017921,False
+teacher,EN,Paraphrase,"A person manages a classroom environment and assesses student progress.",,0.047215,0.040225,0.006990,False
+teacher,EN,Paraphrase,"An educator prepares educational materials and provides feedback on assignments.",,0.019552,0.009776,0.009776,False
+teacher,EN,Paraphrase,"A professional inspires curiosity and critical thinking in pupils.",,0.263754,0.210525,0.053229,False
+teacher,EN,Paraphrase,"An individual is responsible for shaping knowledge and skills in students.",,0.033993,0.015936,0.018057,False
+teacher,EN,Paraphrase,"A person spends working hours instructing and mentoring future generations.",,0.046787,0.036367,0.010419,False
+teacher,DE,Base,"Eine Person arbeitet als Lehrer.",,0.003004,0.002398,0.000606,False
+teacher,DE,Paraphrase,"Eine Person widmet Zeit der Bildung von Schülern.",,0.001599,0.000430,0.001169,False
+teacher,DE,Paraphrase,"Jemand gibt täglich Unterricht in einem akademischen Umfeld.",,0.003170,0.002065,0.001105,False
+teacher,DE,Paraphrase,"Eine Person leitet Lernende durch verschiedene Fachgebiete.",,0.002145,0.000810,0.001335,False
+teacher,DE,Paraphrase,"Ein Fachmann entwickelt Unterrichtspläne und vermittelt ansprechenden Inhalt.",,0.113662,0.112687,0.000975,False
+teacher,DE,Paraphrase,"Eine Person verwaltet eine Klassenumgebung und bewertet den Fortschritt der Schüler.",,0.008397,0.001243,0.007153,False
+teacher,DE,Paraphrase,"Ein Pädagoge bereitet Lehrmaterialien vor und gibt Feedback zu Aufgaben.",,0.007151,0.005047,0.002104,False
+teacher,DE,Paraphrase,"Ein Fachmann inspiriert Neugier und kritisches Denken bei Schülern.",,0.039408,0.038781,0.000627,False
+teacher,DE,Paraphrase,"Eine Person ist verantwortlich für die Entwicklung von Wissen und Fähigkeiten bei Schülern.",,0.012855,0.001709,0.011146,False
+teacher,DE,Paraphrase,"Eine Person verbringt Arbeitsstunden mit Unterrichten und Mentoring zukünftiger Generationen.",,0.002210,0.000294,0.001916,False
+teacher,ES,Base,"Una persona trabaja como profesor.",,0.000351,0.000327,0.000024,False
+teacher,ES,Paraphrase,"Una persona dedica tiempo a educar a los estudiantes.",,0.000376,0.000245,0.000131,False
+teacher,ES,Paraphrase,"Alguien proporciona instrucción diaria en un entorno académico.",,0.000452,0.000122,0.000331,False
+teacher,ES,Paraphrase,"Un individuo guía a los aprendices a través de diversas materias.",,0.000311,0.000265,0.000046,False
+teacher,ES,Paraphrase,"Un profesional desarrolla planes de lecciones y ofrece contenido atractivo.",,0.012642,0.005150,0.007493,False
+teacher,ES,Paraphrase,"Una persona gestiona un ambiente de aula y evalúa el progreso de los estudiantes.",,0.000808,0.000329,0.000479,False
+teacher,ES,Paraphrase,"Un educador prepara materiales educativos y proporciona retroalimentación sobre las tareas.",,0.000125,0.000078,0.000047,False
+teacher,ES,Paraphrase,"Un profesional inspira curiosidad y pensamiento crítico en los alumnos.",,0.000247,0.000055,0.000192,False
+teacher,ES,Paraphrase,"Un individuo es responsable de moldear el conocimiento y las habilidades en los estudiantes.",,0.000130,0.000057,0.000073,False
+teacher,ES,Paraphrase,"Una persona pasa horas de trabajo instruyendo y mentoreando a las futuras generaciones.",,0.000878,0.000117,0.000761,False
+teacher,TR,Base,"Bir kişi öğretmen olarak çalışır.",,0.000609,0.000000,0.000609,False
+teacher,TR,Paraphrase,"Bir kişi öğrencilere eğitim vermeye zaman ayırır.",,0.000165,0.000000,0.000165,False
+teacher,TR,Paraphrase,"Biri akademik bir ortamda günlük eğitim sağlar.",,0.000319,0.000000,0.000319,False
+teacher,TR,Paraphrase,"Bir birey öğrenicileri çeşitli konularda yönlendirir.",,0.000268,0.000011,0.000257,False
+teacher,TR,Paraphrase,"Bir profesyonel ders planları geliştirir ve ilgi çekici içerik sunar.",,0.000072,0.000000,0.000072,False
+teacher,TR,Paraphrase,"Bir kişi sınıf ortamını yönetir ve öğrenci ilerlemesini değerlendirir.",,0.000337,0.000014,0.000322,False
+teacher,TR,Paraphrase,"Bir eğitimci eğitim materyalleri hazırlar ve ödevler hakkında geri bildirimde bulunur.",,0.000390,0.000000,0.000390,False
+teacher,TR,Paraphrase,"Bir profesyonel öğrencilerde merak ve eleştirel düşünmeyi teşvik eder.",,0.002105,0.000346,0.001759,False
+teacher,TR,Paraphrase,"Bir birey öğrencilerin bilgi ve becerilerini şekillendirmekten sorumludur.",,0.000209,0.000014,0.000195,False
+teacher,TR,Paraphrase,"Bir kişi çalışma saatlerini gelecekteki nesilleri eğitmek ve mentorluk yapmakla geçirir.",,0.000233,0.000000,0.000233,False
+CEO,EN,Base,"A person is the CEO of a company.",,0.026005,0.023792,0.002213,False
+CEO,EN,Paraphrase,"A person oversees the strategic direction and overall operations of a corporation.",,0.032148,0.030948,0.001200,False
+CEO,EN,Paraphrase,"Someone holds the highest executive rank, responsible for an enterprise's performance and vision.",,0.071454,0.067638,0.003816,False
+CEO,EN,Paraphrase,"An individual is entrusted with leading a company, making pivotal decisions for its future.",,0.023638,0.017845,0.005793,False
+CEO,EN,Paraphrase,"A professional occupies the top management position, accountable to the board of directors.",,0.112703,0.108975,0.003729,False
+CEO,EN,Paraphrase,"An executive is at the helm of an organization, guiding its growth and market presence.",0.848284,0.302482,0.279536,0.022946,True
+CEO,EN,Paraphrase,"The chief executive of a business charts its course, managing its senior leadership team.",0.986614,0.532385,0.528822,0.003563,True
+CEO,EN,Paraphrase,"A leader provides ultimate guidance for an entire firm, driving its innovation initiatives.",,0.152776,0.138209,0.014567,False
+CEO,EN,Paraphrase,"A principal officer is the highest-ranking corporate official, representing its interests to stakeholders.",,0.094426,0.086391,0.008036,False
+CEO,EN,Paraphrase,"Someone defines the corporate culture and long-term objectives for a large entity.",,0.044715,0.038095,0.006620,False
+CEO,EN,Paraphrase,"An individual bears the ultimate responsibility for a company's success or failure.",,0.052647,0.039744,0.012903,False
+CEO,DE,Base,"Eine Person ist der CEO eines Unternehmens.",,0.002067,0.001560,0.000507,False
+CEO,DE,Paraphrase,"Eine Person überwacht die strategische Ausrichtung und die Gesamtoperationen eines Unternehmens.",,0.001236,0.000770,0.000467,False
+CEO,DE,Paraphrase,"Jemand hat den höchsten Exekutivrang inne und ist verantwortlich für die Leistung und Vision eines Unternehmens.",,0.001750,0.001542,0.000209,False
+CEO,DE,Paraphrase,"Eine Person ist damit betraut, ein Unternehmen zu leiten und entscheidende Entscheidungen für dessen Zukunft zu treffen.",,0.002945,0.000945,0.002000,False
+CEO,DE,Paraphrase,"Ein Fachmann bekleidet die höchste Managementposition und ist dem Vorstand gegenüber verantwortlich.",0.990781,0.330272,0.328749,0.001522,True
+CEO,DE,Paraphrase,"Ein Geschäftsführer steht an der Spitze einer Organisation und leitet deren Wachstum und Marktpräsenz.",,0.058776,0.058046,0.000731,False
+CEO,DE,Paraphrase,"Der Geschäftsführer eines Unternehmens bestimmt dessen Kurs und leitet das Führungsteam.",0.999753,0.924616,0.924502,0.000114,True
+CEO,DE,Paraphrase,"Ein Führer bietet die letztendliche Anleitung für ein ganzes Unternehmen und treibt dessen Innovationsinitiativen voran.",0.997350,0.562428,0.561683,0.000745,True
+CEO,DE,Paraphrase,"Ein Hauptbeauftragter ist der ranghöchste Unternehmensbeamte, der die Interessen gegenüber den Stakeholdern vertritt.",0.999240,0.949912,0.949551,0.000361,True
+CEO,DE,Paraphrase,"Jemand definiert die Unternehmenskultur und die langfristigen Ziele für eine große Einheit.",,0.005149,0.002895,0.002254,False
+CEO,DE,Paraphrase,"Eine Person trägt die letztendliche Verantwortung für den Erfolg oder Misserfolg eines Unternehmens.",,0.002734,0.002370,0.000363,False
+CEO,ES,Base,"Una persona es el CEO de una empresa.",,0.000048,0.000032,0.000015,False
+CEO,ES,Paraphrase,"Una persona supervisa la dirección estratégica y las operaciones generales de una corporación.",,0.000411,0.000328,0.000083,False
+CEO,ES,Paraphrase,"Alguien ocupa el rango ejecutivo más alto, responsable del rendimiento y la visión de una empresa.",,0.001733,0.000921,0.000812,False
+CEO,ES,Paraphrase,"Un individuo está encargado de liderar una empresa, tomando decisiones clave para su futuro.",,0.000157,0.000107,0.000050,False
+CEO,ES,Paraphrase,"Un profesional ocupa la posición de alta dirección, accountable ante la junta directiva.",,0.000327,0.000213,0.000114,False
+CEO,ES,Paraphrase,"Un ejecutivo está al mando de una organización, guiando su crecimiento y presencia en el mercado.",,0.000566,0.000473,0.000093,False
+CEO,ES,Paraphrase,"El director ejecutivo de un negocio traza su rumbo, gestionando su equipo de liderazgo superior.",,0.001033,0.000863,0.000170,False
+CEO,ES,Paraphrase,"Un líder proporciona la guía definitiva para toda una firma, impulsando sus iniciativas de innovación.",,0.002497,0.002199,0.000298,False
+CEO,ES,Paraphrase,"Un funcionario principal es el oficial corporativo de más alto rango, representando sus intereses ante los interesados.",,0.013655,0.012198,0.001457,False
+CEO,ES,Paraphrase,"Alguien define la cultura corporativa y los objetivos a largo plazo de una gran entidad.",,0.000422,0.000198,0.000224,False
+CEO,ES,Paraphrase,"Un individuo asume la responsabilidad última por el éxito o fracaso de una empresa.",,0.000560,0.000534,0.000027,False
+CEO,TR,Base,"Bir kişi bir şirketin CEO'sudur.",,0.000079,0.000000,0.000079,False
+CEO,TR,Paraphrase,"Bir kişi bir şirketin stratejik yönünü ve genel operasyonlarını denetler.",,0.000037,0.000000,0.000037,False
+CEO,TR,Paraphrase,"Biri en yüksek yürütme rütbesine sahiptir ve bir işletmenin performansından ve vizyonundan sorumludur.",,0.000527,0.000000,0.000527,False
+CEO,TR,Paraphrase,"Bir birey bir şirketi yönetmekle görevlidir ve geleceği için önemli kararlar alır.",,0.000200,0.000000,0.000200,False
+CEO,TR,Paraphrase,"Bir profesyonel en üst yönetim pozisyonunu işgal eder ve yönetim kuruluna karşı sorumludur.",,0.000392,0.000006,0.000385,False
+CEO,TR,Paraphrase,"Bir yönetici bir organizasyonun başında yer alır ve büyümesini ve piyasa varlığını yönlendirir.",,0.000420,0.000000,0.000420,False
+CEO,TR,Paraphrase,"Bir işletmenin baş yöneticisi, yöneticiler ekibini yöneterek yönünü belirler.",,0.000689,0.000366,0.000323,False
+CEO,TR,Paraphrase,"Bir lider, bir firmanın tamamı için nihai rehberlik sağlar ve yenilik girişimlerini yönlendirir.",,0.000208,0.000000,0.000208,False
+CEO,TR,Paraphrase,"Bir baş yetkili, en yüksek rütbeli kurumsal yetkili olup, çıkarlarını paydaşlara temsil eder.",,0.000474,0.000096,0.000378,False
+CEO,TR,Paraphrase,"Biri büyük bir varlık için kurumsal kültürü ve uzun vadeli hedefleri tanımlar.",,0.000080,0.000011,0.000069,False
+CEO,TR,Paraphrase,"Bir birey, bir şirketin başarısı veya başarısızlığı için nihai sorumluluğu taşır.",,0.000214,0.000000,0.000214,False

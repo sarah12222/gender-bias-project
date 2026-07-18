@@ -1,0 +1,370 @@
+"""
+translate.py — Multi-Language Translation (Incremental)
+=========================================================
+
+Reads filtered_concepts.json and translates English sentences into one or
+more target languages, writing results into translated_concepts.json.
+
+Supports any number of gender-neutral languages. Currently configured:
+  TR  Turkish    — agglutinative, fully gender-neutral pronoun (o)
+  ZH  Chinese    — isolating, has he/she (他/她) but occupation nouns neutral
+  JA  Japanese   — agglutinative, occupation nouns neutral; avoid gendered prefix
+  FI  Finnish    — agglutinative, fully gender-neutral pronoun (hän)
+  FA  Persian    — fusional, fully gender-neutral pronoun (او)
+
+Usage:
+  python translate.py --lang TR
+  python translate.py --lang ZH JA
+  python translate.py --lang TR ZH JA FI FA   (translate all at once)
+
+Incremental logic:
+  - Reads existing translated_concepts.json if it exists.
+  - For each concept × category × language: if the language key already
+    exists and has the correct number of sentences, SKIP (do not re-call API).
+  - Only missing or mismatched language slots are translated.
+  - EN is always read from filtered_concepts.json; it is never re-translated.
+
+Output structure per concept:
+  {
+    "concept": "driver",
+    "categories": {
+      "Baseline":   { "EN": [...], "TR": [...], "ZH": [...], ... },
+      "Lexical":    { "EN": [...], "TR": [...], "ZH": [...], ... },
+      "Activity":   { "EN": [...], "TR": [...], "ZH": [...], ... },
+      "Contextual": { "EN": [...], "TR": [...], "ZH": [...], ... }
+    }
+  }
+
+Adding a new language:
+  1. Add an entry to LANGUAGE_CONFIGS below.
+  2. Run: python translate.py --lang <CODE>
+  That's it. Nothing else changes.
+"""
+
+import os
+import json
+import time
+import argparse
+from openai import OpenAI
+
+# ── Config ─────────────────────────────────────────────────────────────────────
+API_KEY    = "API-KEY here"
+client     = OpenAI(api_key=API_KEY)
+MODEL_NAME = "gpt-4o-mini"
+
+# ── Language configurations ────────────────────────────────────────────────────
+# Each entry defines:
+#   name          : human-readable language name (used in system prompt)
+#   output_key    : the JSON key used in translated_concepts.json
+#   baseline_hint : example of what a Baseline sentence looks like in this language
+#   specific_rules: list of additional rules appended after the shared base rules
+#                   (empty list = no extra rules needed)
+
+LANGUAGE_CONFIGS = {
+    "TR": {
+        "name": "Turkish",
+        "output_key": "TR",
+        "baseline_hint": 'e.g. "Sürücü şu anda çalışıyor."',
+        "specific_rules": [
+            "Turkish third-person pronoun 'o' is gender-neutral by default — "
+            "this is acceptable and preferred over omitting the subject.",
+            "Do NOT use any gendered occupational suffix or variant.",
+        ],
+    },
+    "ZH": {
+        "name": "Chinese (Mandarin)",
+        "output_key": "ZH",
+        "baseline_hint": 'e.g. "司机目前正在工作。"',
+        "specific_rules": [
+            "Do NOT use gendered pronouns 他 (he) or 她 (she) anywhere in the "
+            "translation. Refer to the person using the occupational noun itself "
+            "or the construction 该[职业] (e.g. 该司机) when a pronoun is needed.",
+            "Use Simplified Chinese characters.",
+        ],
+    },
+    "JA": {
+        "name": "Japanese",
+        "output_key": "JA",
+        "baseline_hint": 'e.g. "運転手は現在働いている。"',
+        "specific_rules": [
+            "Use plain form (常体 / だ体) throughout. Do NOT use polite form "
+            "(です / ます).",
+            "Do NOT add gendered prefixes such as 女性 (jōsei) or 男性 (dansei) "
+            "before occupational nouns.",
+            "When a pronoun is required, use the occupational noun itself or "
+            "その[職業] rather than introducing a gendered form.",
+        ],
+    },
+    "FI": {
+        "name": "Finnish",
+        "output_key": "FI",
+        "baseline_hint": 'e.g. "Kuljettaja työskentelee tällä hetkellä."',
+        "specific_rules": [
+            "Finnish third-person pronoun 'hän' is gender-neutral — use it "
+            "consistently wherever a subject pronoun is needed.",
+            "Use the nominative case for occupational nouns in Baseline and "
+            "Lexical sentences.",
+            "Do NOT introduce gendered occupational variants.",
+        ],
+    },
+    "FA": {
+        "name": "Persian (Farsi)",
+        "output_key": "FA",
+        "baseline_hint": 'e.g. "راننده در حال کار کردن است."',
+        "specific_rules": [
+            "Use Persian script (right-to-left). Do NOT romanise.",
+            "Persian third-person pronoun 'او' is gender-neutral — use it "
+            "consistently wherever a subject pronoun is needed.",
+            "Do NOT introduce gendered occupational variants.",
+        ],
+    },
+    "KO": {
+    "name": "Korean",
+    "output_key": "KO",
+    "baseline_hint": 'e.g. "운전기사는 현재 일하고 있다."',
+    "specific_rules": [
+        "Use plain speech level (해라체 / 한다체) throughout. "
+        "Do NOT use polite speech levels (합쇼체 or 해요체).",
+        "Korean third-person pronouns (그/그녀) are rarely used in natural Korean. "
+        "Prefer referring to the person using the occupational noun itself or "
+        "omitting the subject entirely, which is grammatically natural in Korean.",
+        "Do NOT add gendered occupational prefixes such as 여성 (yeoseong) or "
+        "남성 (namseong) before occupational nouns.",
+    ],
+    },
+}
+
+# ── Structured output schema (dynamic per language) ───────────────────────────
+def make_response_format(lang_key: str) -> dict:
+    """
+    Builds the JSON schema response format for the given language output key.
+    The model returns { "<LANG>": ["sentence1", "sentence2", ...] }.
+    """
+    return {
+        "type": "json_schema",
+        "json_schema": {
+            "name": f"translation_schema_{lang_key}",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    lang_key: {
+                        "type": "array",
+                        "items": {"type": "string"},
+                    }
+                },
+                "required": [lang_key],
+                "additionalProperties": False,
+            },
+            "strict": True,
+        },
+    }
+
+
+# ── Prompt builder ─────────────────────────────────────────────────────────────
+def build_system_prompt(config: dict) -> str:
+    return (
+        f"You are a professional linguistic translator with deep expertise in "
+        f"{config['name']}. You produce accurate, natural-sounding translations "
+        f"that strictly follow all grammatical and structural constraints provided."
+    )
+
+
+def build_user_prompt(concept: str, category: str,
+                      sentences: list, lang_key: str) -> str:
+    config    = LANGUAGE_CONFIGS[lang_key]
+    lang_name = config["name"]
+    hint      = config["baseline_hint"]
+    n         = len(sentences)
+
+    # ── Shared base rules (apply to all languages) ────────────────────────────
+    base_rules = [
+        f"Preserve the occupational noun in {lang_name}. Use the standard "
+        f"{lang_name} equivalent of '{concept}' — do NOT keep the English word "
+        f"unless there is no established {lang_name} term.",
+        "Maintain the sentence structure of the original:\n"
+        f"   - Baseline / Lexical : short stative sentence  ({hint})\n"
+        "   - Activity            : single action sentence, length equivalent "
+        "to the English original\n"
+        "   - Contextual          : long sentence with fronted adverbial noise "
+        "block — the noise elements must precede the occupational noun",
+        f"Translate ALL sentences. Return exactly {n} sentences in the same "
+        "order as the input.",
+        f"Produce natural, fluent {lang_name} — not a word-for-word literal "
+        "translation.",
+    ]
+
+    # ── Language-specific rules appended after base rules ─────────────────────
+    lang_rules = config["specific_rules"]
+    all_rules  = base_rules + lang_rules
+
+    numbered = "\n".join(f"{i+1}. {r}" for i, r in enumerate(all_rules))
+    sentences_json = json.dumps(sentences, ensure_ascii=False)
+
+    return (
+        f"Translate the following English sentences into {lang_name} ({lang_key}).\n"
+        f"These sentences are about a {concept} (prompt category: {category}).\n\n"
+        f"STRICT RULES:\n{numbered}\n\n"
+        f"English sentences:\n{sentences_json}"
+    )
+
+
+# ── Single translation call with retry ────────────────────────────────────────
+def translate_sentences(concept: str, category: str,
+                        sentences: list, lang_key: str,
+                        max_retries: int = 3) -> list:
+    """
+    Translates `sentences` into `lang_key`.
+    Returns a list of translated sentences in the same order, or [] on failure.
+    """
+    if not sentences:
+        return []
+
+    system_prompt   = build_system_prompt(LANGUAGE_CONFIGS[lang_key])
+    user_prompt     = build_user_prompt(concept, category, sentences, lang_key)
+    response_format = make_response_format(lang_key)
+    base_delay      = 2
+
+    for attempt in range(max_retries):
+        try:
+            response = client.chat.completions.create(
+                model=MODEL_NAME,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user",   "content": user_prompt},
+                ],
+                response_format=response_format,
+                temperature=0.1,
+            )
+            data         = json.loads(response.choices[0].message.content.strip())
+            translations = data.get(lang_key, [])
+
+            if len(translations) != len(sentences):
+                print(f"    [Warning] Expected {len(sentences)} translations, "
+                      f"got {len(translations)}. Retrying...")
+                raise ValueError("Translation count mismatch")
+
+            return translations
+
+        except Exception as e:
+            wait = base_delay * (2 ** attempt)
+            print(f"    [Warning] Attempt {attempt+1}/{max_retries} failed: {e}")
+            if attempt < max_retries - 1:
+                print(f"    [Retry] Waiting {wait}s...")
+                time.sleep(wait)
+            else:
+                print(f"    [Fatal] Max retries reached — "
+                      f"{concept} / {category} / {lang_key}")
+                return []
+
+    return []
+
+
+# ── Main ───────────────────────────────────────────────────────────────────────
+def main():
+    parser = argparse.ArgumentParser(
+        description="Translate filtered_concepts.json into one or more languages."
+    )
+    parser.add_argument(
+        "--lang", nargs="+", required=True,
+        choices=list(LANGUAGE_CONFIGS.keys()),
+        help="Language code(s) to, translate into, e.g. --lang TR ZH JA",
+    )
+    args      = parser.parse_args()
+    target_langs = args.lang
+
+    current_dir  = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(current_dir)
+
+    input_path  = os.path.join(project_root, "data", "processed",
+                               "filtered_concepts.json")
+    output_path = os.path.join(project_root, "data", "processed",
+                               "translated_concepts.json")
+
+    if not os.path.exists(input_path):
+        print(f"Error: Cannot find input file at {input_path}")
+        return
+
+    # Load source (filtered EN sentences)
+    with open(input_path, "r", encoding="utf-8") as f:
+        source_concepts = json.load(f)
+
+    # Load existing output if it exists (for incremental update)
+    if os.path.exists(output_path):
+        with open(output_path, "r", encoding="utf-8-sig") as f:
+            existing = json.load(f)
+        # Build lookup: concept → categories dict
+        existing_map = {item["concept"]: item["categories"] for item in existing}
+        print(f"Loaded existing translated_concepts.json "
+              f"({len(existing_map)} concepts).")
+    else:
+        existing_map = {}
+        print("No existing translated_concepts.json — starting fresh.")
+
+    print(f"\nTarget language(s): {', '.join(target_langs)}\n")
+
+    results = []
+
+    for source_item in source_concepts:
+        concept    = source_item["concept"]
+        src_cats   = source_item["categories"]
+
+        print(f">>> {concept}")
+
+        # Start from existing data for this concept (if any)
+        merged_cats = existing_map.get(concept, {})
+
+        for category, en_sentences in src_cats.items():
+
+            # Always keep / refresh EN from source
+            if category not in merged_cats:
+                merged_cats[category] = {}
+            merged_cats[category]["EN"] = en_sentences
+
+            # Translate into each requested language
+            for lang in target_langs:
+                existing_translations = merged_cats[category].get(lang, [])
+
+                # Skip if already complete
+                if len(existing_translations) == len(en_sentences):
+                    print(f"  [{category:<10}] {lang}  SKIP (already complete)")
+                    continue
+
+                print(f"  [{category:<10}] {lang}  translating "
+                      f"{len(en_sentences)} sentences...")
+
+                translated = translate_sentences(
+                    concept, category, en_sentences, lang
+                )
+                merged_cats[category][lang] = translated
+
+                n_ok = len(translated)
+                status = ("OK" if n_ok == len(en_sentences)
+                          else f"MISMATCH ({n_ok}/{len(en_sentences)})")
+                print(f"  [{category:<10}] {lang}  {status}")
+
+                time.sleep(0.5)   # rate-limit buffer between categories
+
+        results.append({"concept": concept, "categories": merged_cats})
+        time.sleep(1)             # rate-limit buffer between concepts
+
+    # Write output
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(results, f, indent=2, ensure_ascii=False)
+
+    # ── Summary ────────────────────────────────────────────────────────────────
+    print("\n── Translation Summary " + "─" * 50)
+    for item in results:
+        c = item["concept"]
+        for cat, lang_data in item["categories"].items():
+            n_en = len(lang_data.get("EN", []))
+            for lang in target_langs:
+                n_t  = len(lang_data.get(lang, []))
+                mark = "✓" if n_t == n_en else f"✗ {n_t}/{n_en}"
+                print(f"  {c:22s}  [{cat:<10}]  {lang}  {mark}")
+    print("─" * 72)
+    print(f"\nDone. Saved to: {output_path}")
+
+
+if __name__ == "__main__":
+    main()
